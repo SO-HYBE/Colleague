@@ -37,7 +37,7 @@ public class StudentManager extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFrame1 = new javax.swing.JFrame();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
         panel1 = new java.awt.Panel();
         labelPic = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -94,6 +94,10 @@ public class StudentManager extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        addGrades = new javax.swing.JButton();
+        clearGrades = new javax.swing.JButton();
+        editGrades = new javax.swing.JButton();
+        removeGrades = new javax.swing.JButton();
         Staff = new javax.swing.JTabbedPane();
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
@@ -104,17 +108,6 @@ public class StudentManager extends javax.swing.JFrame {
         removeStaff = new javax.swing.JLabel();
         editStaff = new javax.swing.JLabel();
         clearStaff = new javax.swing.JLabel();
-
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Colleague - Student Managment System");
@@ -479,21 +472,21 @@ public class StudentManager extends javax.swing.JFrame {
         studentsTable.setForeground(new java.awt.Color(62, 50, 50));
         studentsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Sohybe",  new Integer(1290391),  new Double(4.0),  new Integer(3),  new Integer(6)},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {"Sohybe",  new Integer(1290391),  new Double(4.0),  new Integer(3)},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Name", "ID", "GPA", "Level", "Courses"
+                "Name", "ID", "GPA", "Level"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -504,6 +497,7 @@ public class StudentManager extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        studentsTable.setColumnSelectionAllowed(true);
         studentsTable.setFocusable(false);
         studentsTable.setRowHeight(24);
         studentsTable.setSelectionBackground(new java.awt.Color(70, 60, 60));
@@ -518,7 +512,6 @@ public class StudentManager extends javax.swing.JFrame {
             studentsTable.getColumnModel().getColumn(1).setResizable(false);
             studentsTable.getColumnModel().getColumn(2).setResizable(false);
             studentsTable.getColumnModel().getColumn(3).setResizable(false);
-            studentsTable.getColumnModel().getColumn(4).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -842,16 +835,92 @@ public class StudentManager extends javax.swing.JFrame {
         jLabel3.setText("4");
         jLabel3.setOpaque(true);
 
+        addGrades.setBackground(new java.awt.Color(168, 124, 124));
+        addGrades.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 24)); // NOI18N
+        addGrades.setForeground(new java.awt.Color(255, 255, 255));
+        addGrades.setText("Add");
+        addGrades.setBorder(null);
+        addGrades.setBorderPainted(false);
+        addGrades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addGrades.setFocusable(false);
+        addGrades.setMaximumSize(new java.awt.Dimension(150, 50));
+        addGrades.setMinimumSize(new java.awt.Dimension(150, 50));
+        addGrades.setPreferredSize(new java.awt.Dimension(150, 50));
+        addGrades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addGradesActionPerformed(evt);
+            }
+        });
+
+        clearGrades.setBackground(new java.awt.Color(168, 124, 124));
+        clearGrades.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 24)); // NOI18N
+        clearGrades.setForeground(new java.awt.Color(255, 255, 255));
+        clearGrades.setText("Clear");
+        clearGrades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        clearGrades.setBorderPainted(false);
+        clearGrades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        clearGrades.setFocusable(false);
+        clearGrades.setMaximumSize(new java.awt.Dimension(150, 50));
+        clearGrades.setMinimumSize(new java.awt.Dimension(150, 50));
+        clearGrades.setPreferredSize(new java.awt.Dimension(150, 50));
+        clearGrades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearGradesActionPerformed(evt);
+            }
+        });
+
+        editGrades.setBackground(new java.awt.Color(168, 124, 124));
+        editGrades.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 24)); // NOI18N
+        editGrades.setForeground(new java.awt.Color(255, 255, 255));
+        editGrades.setText("Edit");
+        editGrades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        editGrades.setBorderPainted(false);
+        editGrades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        editGrades.setFocusable(false);
+        editGrades.setMaximumSize(new java.awt.Dimension(150, 50));
+        editGrades.setMinimumSize(new java.awt.Dimension(150, 50));
+        editGrades.setPreferredSize(new java.awt.Dimension(150, 50));
+        editGrades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editGradesActionPerformed(evt);
+            }
+        });
+
+        removeGrades.setBackground(new java.awt.Color(168, 124, 124));
+        removeGrades.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 24)); // NOI18N
+        removeGrades.setForeground(new java.awt.Color(255, 255, 255));
+        removeGrades.setText("Remove");
+        removeGrades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        removeGrades.setBorderPainted(false);
+        removeGrades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        removeGrades.setFocusable(false);
+        removeGrades.setMaximumSize(new java.awt.Dimension(150, 50));
+        removeGrades.setMinimumSize(new java.awt.Dimension(150, 50));
+        removeGrades.setPreferredSize(new java.awt.Dimension(150, 50));
+        removeGrades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeGradesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(71, 71, 71)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(addGrades, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clearGrades, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(85, 85, 85)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(320, 320, 320))
+                .addGap(118, 118, 118)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(removeGrades, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editGrades, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(70, 70, 70))
             .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
@@ -863,11 +932,22 @@ public class StudentManager extends javax.swing.JFrame {
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(removeGrades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(editGrades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(addGrades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(clearGrades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -1065,6 +1145,22 @@ public class StudentManager extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void addGradesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addGradesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addGradesActionPerformed
+
+    private void clearGradesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearGradesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clearGradesActionPerformed
+
+    private void editGradesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editGradesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editGradesActionPerformed
+
+    private void removeGradesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeGradesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeGradesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1108,20 +1204,22 @@ public class StudentManager extends javax.swing.JFrame {
     private javax.swing.JTabbedPane Staff;
     private javax.swing.JTabbedPane Students;
     private javax.swing.JLabel addCourse;
+    private javax.swing.JButton addGrades;
     private javax.swing.JLabel addStaff;
     private javax.swing.JLabel addStud;
     private javax.swing.JLabel clearCourse;
+    private javax.swing.JButton clearGrades;
     private javax.swing.JLabel clearStaff;
     private javax.swing.JLabel clearStud;
     private javax.swing.JButton couButton;
     private javax.swing.JTable coursesTable;
     private javax.swing.JButton dashButton;
     private javax.swing.JLabel editCourse;
+    private javax.swing.JButton editGrades;
     private javax.swing.JLabel editStaff;
     private javax.swing.JLabel editStud;
     private javax.swing.JButton gradButton;
     private javax.swing.JTable gradeTable;
-    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1154,6 +1252,7 @@ public class StudentManager extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1163,6 +1262,7 @@ public class StudentManager extends javax.swing.JFrame {
     private javax.swing.JTabbedPane mainTab;
     private java.awt.Panel panel1;
     private javax.swing.JLabel removeCourse;
+    private javax.swing.JButton removeGrades;
     private javax.swing.JLabel removeStaff;
     private javax.swing.JLabel removeStud;
     private javax.swing.JButton staffButton;
