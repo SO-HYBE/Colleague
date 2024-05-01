@@ -8,6 +8,8 @@
  * @author sohai
  */
 import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.event.*;
 import javax.swing.ImageIcon;
 public class StudentManager extends javax.swing.JFrame {
 
@@ -71,20 +73,20 @@ public class StudentManager extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         studentsTable = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        addStud = new javax.swing.JLabel();
-        removeStud = new javax.swing.JLabel();
-        editStud = new javax.swing.JLabel();
-        clearStud = new javax.swing.JLabel();
+        addStud = new javax.swing.JButton();
+        removeStud = new javax.swing.JButton();
+        editStud = new javax.swing.JButton();
+        clearStud = new javax.swing.JButton();
         Courses = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         coursesTable = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
-        addCourse = new javax.swing.JLabel();
-        removeCourse = new javax.swing.JLabel();
-        editCourse = new javax.swing.JLabel();
-        clearCourse = new javax.swing.JLabel();
+        clearCourse = new javax.swing.JButton();
+        editCourse = new javax.swing.JButton();
+        removeCourse = new javax.swing.JButton();
+        addCourse = new javax.swing.JButton();
         Grades = new javax.swing.JTabbedPane();
         jPanel12 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -104,17 +106,15 @@ public class StudentManager extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         staffTable = new javax.swing.JTable();
         jPanel11 = new javax.swing.JPanel();
-        addStaff = new javax.swing.JLabel();
-        removeStaff = new javax.swing.JLabel();
-        editStaff = new javax.swing.JLabel();
-        clearStaff = new javax.swing.JLabel();
+        clearStaff = new javax.swing.JButton();
+        editStaff = new javax.swing.JButton();
+        removeStaff = new javax.swing.JButton();
+        addStaff = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Colleague - Student Managment System");
         setLocation(new java.awt.Point(700, 250));
-        setMaximumSize(new java.awt.Dimension(848, 650));
         setMinimumSize(new java.awt.Dimension(848, 650));
-        setPreferredSize(new java.awt.Dimension(848, 650));
         setResizable(false);
         setSize(new java.awt.Dimension(847, 650));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -130,7 +130,7 @@ public class StudentManager extends javax.swing.JFrame {
         panel1.add(labelPic, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 15, -1, -1));
         labelPic.getAccessibleContext().setAccessibleName("labelPic");
 
-        getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, -1));
+        getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, -1));
 
         jPanel2.setBackground(new java.awt.Color(62, 50, 50));
 
@@ -219,7 +219,8 @@ public class StudentManager extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
                 .addComponent(dashButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
                 .addComponent(studButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -227,9 +228,9 @@ public class StudentManager extends javax.swing.JFrame {
                 .addComponent(couButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
                 .addComponent(gradButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(staffButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,7 +245,7 @@ public class StudentManager extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 850, 80));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 860, 80));
 
         jPanel1.setBackground(new java.awt.Color(107, 99, 99));
 
@@ -394,13 +395,12 @@ public class StudentManager extends javax.swing.JFrame {
                                 .addGap(111, 111, 111)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(47, 47, 47)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -409,7 +409,7 @@ public class StudentManager extends javax.swing.JFrame {
                                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(104, 104, 104)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
+                        .addGap(1, 1, 1)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -418,8 +418,7 @@ public class StudentManager extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(853, 853, 853))
+                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -497,9 +496,10 @@ public class StudentManager extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        studentsTable.setColumnSelectionAllowed(true);
+        studentsTable.setCellSelectionEnabled(false);
         studentsTable.setFocusable(false);
         studentsTable.setRowHeight(24);
+        studentsTable.setRowSelectionAllowed(true);
         studentsTable.setSelectionBackground(new java.awt.Color(70, 60, 60));
         studentsTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
         studentsTable.setShowGrid(true);
@@ -519,53 +519,50 @@ public class StudentManager extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 693, Short.MAX_VALUE)
-                .addGap(17, 17, 17))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 710, 470));
+        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 720, 470));
 
         jPanel4.setBackground(new java.awt.Color(80, 60, 60));
 
         addStud.setBackground(new java.awt.Color(62, 50, 50));
         addStud.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
         addStud.setForeground(new java.awt.Color(255, 255, 255));
-        addStud.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         addStud.setText("Add");
         addStud.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         addStud.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        addStud.setOpaque(true);
+        addStud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addStudActionPerformed(evt);
+            }
+        });
 
         removeStud.setBackground(new java.awt.Color(62, 50, 50));
         removeStud.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
         removeStud.setForeground(new java.awt.Color(255, 255, 255));
-        removeStud.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         removeStud.setText("Remove");
         removeStud.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         removeStud.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        removeStud.setOpaque(true);
 
         editStud.setBackground(new java.awt.Color(62, 50, 50));
         editStud.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
         editStud.setForeground(new java.awt.Color(255, 255, 255));
-        editStud.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         editStud.setText("Edit");
         editStud.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         editStud.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        editStud.setOpaque(true);
 
         clearStud.setBackground(new java.awt.Color(62, 50, 50));
         clearStud.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
         clearStud.setForeground(new java.awt.Color(255, 255, 255));
-        clearStud.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         clearStud.setText("Clear");
         clearStud.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         clearStud.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        clearStud.setOpaque(true);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -574,10 +571,10 @@ public class StudentManager extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addStud, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(removeStud, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editStud, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearStud, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addStud, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(removeStud, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editStud, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clearStud, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -653,54 +650,49 @@ public class StudentManager extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 693, Short.MAX_VALUE)
-                .addGap(17, 17, 17))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 710, 470));
+        jPanel5.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 720, 470));
 
         jPanel8.setBackground(new java.awt.Color(80, 60, 60));
-
-        addCourse.setBackground(new java.awt.Color(62, 50, 50));
-        addCourse.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
-        addCourse.setForeground(new java.awt.Color(255, 255, 255));
-        addCourse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        addCourse.setText("Add");
-        addCourse.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        addCourse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        addCourse.setOpaque(true);
-
-        removeCourse.setBackground(new java.awt.Color(62, 50, 50));
-        removeCourse.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
-        removeCourse.setForeground(new java.awt.Color(255, 255, 255));
-        removeCourse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        removeCourse.setText("Remove");
-        removeCourse.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        removeCourse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        removeCourse.setOpaque(true);
-
-        editCourse.setBackground(new java.awt.Color(62, 50, 50));
-        editCourse.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
-        editCourse.setForeground(new java.awt.Color(255, 255, 255));
-        editCourse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        editCourse.setText("Edit");
-        editCourse.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        editCourse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        editCourse.setOpaque(true);
 
         clearCourse.setBackground(new java.awt.Color(62, 50, 50));
         clearCourse.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
         clearCourse.setForeground(new java.awt.Color(255, 255, 255));
-        clearCourse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         clearCourse.setText("Clear");
         clearCourse.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         clearCourse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        clearCourse.setOpaque(true);
+
+        editCourse.setBackground(new java.awt.Color(62, 50, 50));
+        editCourse.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
+        editCourse.setForeground(new java.awt.Color(255, 255, 255));
+        editCourse.setText("Edit");
+        editCourse.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        editCourse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        removeCourse.setBackground(new java.awt.Color(62, 50, 50));
+        removeCourse.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
+        removeCourse.setForeground(new java.awt.Color(255, 255, 255));
+        removeCourse.setText("Remove");
+        removeCourse.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        removeCourse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        addCourse.setBackground(new java.awt.Color(62, 50, 50));
+        addCourse.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
+        addCourse.setForeground(new java.awt.Color(255, 255, 255));
+        addCourse.setText("Add");
+        addCourse.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        addCourse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCourseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -709,10 +701,10 @@ public class StudentManager extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addCourse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(removeCourse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editCourse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearCourse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(removeCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clearCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -835,12 +827,11 @@ public class StudentManager extends javax.swing.JFrame {
         jLabel3.setText("4");
         jLabel3.setOpaque(true);
 
-        addGrades.setBackground(new java.awt.Color(168, 124, 124));
+        addGrades.setBackground(new java.awt.Color(126, 99, 99));
         addGrades.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 24)); // NOI18N
         addGrades.setForeground(new java.awt.Color(255, 255, 255));
         addGrades.setText("Add");
-        addGrades.setBorder(null);
-        addGrades.setBorderPainted(false);
+        addGrades.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         addGrades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addGrades.setFocusable(false);
         addGrades.setMaximumSize(new java.awt.Dimension(150, 50));
@@ -852,63 +843,45 @@ public class StudentManager extends javax.swing.JFrame {
             }
         });
 
-        clearGrades.setBackground(new java.awt.Color(168, 124, 124));
+        clearGrades.setBackground(new java.awt.Color(126, 99, 99));
         clearGrades.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 24)); // NOI18N
         clearGrades.setForeground(new java.awt.Color(255, 255, 255));
         clearGrades.setText("Clear");
-        clearGrades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
-        clearGrades.setBorderPainted(false);
+        clearGrades.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         clearGrades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clearGrades.setFocusable(false);
         clearGrades.setMaximumSize(new java.awt.Dimension(150, 50));
         clearGrades.setMinimumSize(new java.awt.Dimension(150, 50));
         clearGrades.setPreferredSize(new java.awt.Dimension(150, 50));
-        clearGrades.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearGradesActionPerformed(evt);
-            }
-        });
 
-        editGrades.setBackground(new java.awt.Color(168, 124, 124));
+        editGrades.setBackground(new java.awt.Color(126, 99, 99));
         editGrades.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 24)); // NOI18N
         editGrades.setForeground(new java.awt.Color(255, 255, 255));
         editGrades.setText("Edit");
-        editGrades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
-        editGrades.setBorderPainted(false);
+        editGrades.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         editGrades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         editGrades.setFocusable(false);
         editGrades.setMaximumSize(new java.awt.Dimension(150, 50));
         editGrades.setMinimumSize(new java.awt.Dimension(150, 50));
         editGrades.setPreferredSize(new java.awt.Dimension(150, 50));
-        editGrades.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editGradesActionPerformed(evt);
-            }
-        });
 
-        removeGrades.setBackground(new java.awt.Color(168, 124, 124));
+        removeGrades.setBackground(new java.awt.Color(126, 99, 99));
         removeGrades.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 24)); // NOI18N
         removeGrades.setForeground(new java.awt.Color(255, 255, 255));
         removeGrades.setText("Remove");
-        removeGrades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
-        removeGrades.setBorderPainted(false);
+        removeGrades.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         removeGrades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         removeGrades.setFocusable(false);
         removeGrades.setMaximumSize(new java.awt.Dimension(150, 50));
         removeGrades.setMinimumSize(new java.awt.Dimension(150, 50));
         removeGrades.setPreferredSize(new java.awt.Dimension(150, 50));
-        removeGrades.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removeGradesActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(addGrades, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(clearGrades, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -923,8 +896,8 @@ public class StudentManager extends javax.swing.JFrame {
                 .addGap(70, 70, 70))
             .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 836, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 824, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
@@ -1008,54 +981,49 @@ public class StudentManager extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 693, Short.MAX_VALUE)
-                .addGap(17, 17, 17))
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
         );
 
-        jPanel9.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 710, 470));
+        jPanel9.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 721, 470));
 
         jPanel11.setBackground(new java.awt.Color(80, 60, 60));
-
-        addStaff.setBackground(new java.awt.Color(62, 50, 50));
-        addStaff.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
-        addStaff.setForeground(new java.awt.Color(255, 255, 255));
-        addStaff.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        addStaff.setText("Add");
-        addStaff.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        addStaff.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        addStaff.setOpaque(true);
-
-        removeStaff.setBackground(new java.awt.Color(62, 50, 50));
-        removeStaff.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
-        removeStaff.setForeground(new java.awt.Color(255, 255, 255));
-        removeStaff.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        removeStaff.setText("Remove");
-        removeStaff.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        removeStaff.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        removeStaff.setOpaque(true);
-
-        editStaff.setBackground(new java.awt.Color(62, 50, 50));
-        editStaff.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
-        editStaff.setForeground(new java.awt.Color(255, 255, 255));
-        editStaff.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        editStaff.setText("Edit");
-        editStaff.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        editStaff.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        editStaff.setOpaque(true);
 
         clearStaff.setBackground(new java.awt.Color(62, 50, 50));
         clearStaff.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
         clearStaff.setForeground(new java.awt.Color(255, 255, 255));
-        clearStaff.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         clearStaff.setText("Clear");
         clearStaff.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         clearStaff.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        clearStaff.setOpaque(true);
+
+        editStaff.setBackground(new java.awt.Color(62, 50, 50));
+        editStaff.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
+        editStaff.setForeground(new java.awt.Color(255, 255, 255));
+        editStaff.setText("Edit");
+        editStaff.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        editStaff.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        removeStaff.setBackground(new java.awt.Color(62, 50, 50));
+        removeStaff.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
+        removeStaff.setForeground(new java.awt.Color(255, 255, 255));
+        removeStaff.setText("Remove");
+        removeStaff.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        removeStaff.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        addStaff.setBackground(new java.awt.Color(62, 50, 50));
+        addStaff.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
+        addStaff.setForeground(new java.awt.Color(255, 255, 255));
+        addStaff.setText("Add");
+        addStaff.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        addStaff.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addStaff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addStaffActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -1064,10 +1032,10 @@ public class StudentManager extends javax.swing.JFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addStaff, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(removeStaff, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editStaff, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearStaff, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(removeStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clearStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
@@ -1146,20 +1114,24 @@ public class StudentManager extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void addGradesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addGradesActionPerformed
-        // TODO add your handling code here:
+        addGradeFrame gradeFrame = new addGradeFrame();
+        gradeFrame.setVisible(true);
     }//GEN-LAST:event_addGradesActionPerformed
 
-    private void clearGradesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearGradesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_clearGradesActionPerformed
+    private void addStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStudActionPerformed
+        addStudentFrame studFrame = new addStudentFrame();
+        studFrame.setVisible(true);
+    }//GEN-LAST:event_addStudActionPerformed
 
-    private void editGradesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editGradesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_editGradesActionPerformed
+    private void addStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStaffActionPerformed
+        addStaffFrame staffFrame = new addStaffFrame();
+        staffFrame.setVisible(true);
+    }//GEN-LAST:event_addStaffActionPerformed
 
-    private void removeGradesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeGradesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_removeGradesActionPerformed
+    private void addCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCourseActionPerformed
+        addCourseFrame courseFrame = new addCourseFrame();
+        courseFrame.setVisible(true);
+    }//GEN-LAST:event_addCourseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1196,6 +1168,11 @@ public class StudentManager extends javax.swing.JFrame {
         });
 
     }
+    
+    public void close (){
+            WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+            Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane Courses;
@@ -1203,21 +1180,21 @@ public class StudentManager extends javax.swing.JFrame {
     private javax.swing.JTabbedPane Grades;
     private javax.swing.JTabbedPane Staff;
     private javax.swing.JTabbedPane Students;
-    private javax.swing.JLabel addCourse;
+    private javax.swing.JButton addCourse;
     private javax.swing.JButton addGrades;
-    private javax.swing.JLabel addStaff;
-    private javax.swing.JLabel addStud;
-    private javax.swing.JLabel clearCourse;
+    private javax.swing.JButton addStaff;
+    private javax.swing.JButton addStud;
+    private javax.swing.JButton clearCourse;
     private javax.swing.JButton clearGrades;
-    private javax.swing.JLabel clearStaff;
-    private javax.swing.JLabel clearStud;
+    private javax.swing.JButton clearStaff;
+    private javax.swing.JButton clearStud;
     private javax.swing.JButton couButton;
     private javax.swing.JTable coursesTable;
     private javax.swing.JButton dashButton;
-    private javax.swing.JLabel editCourse;
+    private javax.swing.JButton editCourse;
     private javax.swing.JButton editGrades;
-    private javax.swing.JLabel editStaff;
-    private javax.swing.JLabel editStud;
+    private javax.swing.JButton editStaff;
+    private javax.swing.JButton editStud;
     private javax.swing.JButton gradButton;
     private javax.swing.JTable gradeTable;
     private javax.swing.JLabel jLabel1;
@@ -1261,10 +1238,10 @@ public class StudentManager extends javax.swing.JFrame {
     private javax.swing.JLabel labelPic;
     private javax.swing.JTabbedPane mainTab;
     private java.awt.Panel panel1;
-    private javax.swing.JLabel removeCourse;
+    private javax.swing.JButton removeCourse;
     private javax.swing.JButton removeGrades;
-    private javax.swing.JLabel removeStaff;
-    private javax.swing.JLabel removeStud;
+    private javax.swing.JButton removeStaff;
+    private javax.swing.JButton removeStud;
     private javax.swing.JButton staffButton;
     private javax.swing.JTable staffTable;
     private javax.swing.JButton studButton;
