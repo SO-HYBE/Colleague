@@ -7,7 +7,6 @@
  *
  * @author sohai
  */
-import java.sql.*;
 public class addCourseFrame extends javax.swing.JFrame {
 
     /**
