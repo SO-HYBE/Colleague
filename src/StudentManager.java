@@ -7,6 +7,7 @@
  *
  * @author sohai
  */
+import java.sql.*;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.*;
