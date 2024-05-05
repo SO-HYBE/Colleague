@@ -11,6 +11,7 @@ import java.awt.event.WindowEvent;
  *
  * @author sohai
  */
+import java.sql.*;
 public class addStudentFrame extends javax.swing.JFrame {
 
     /**

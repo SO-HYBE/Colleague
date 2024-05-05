@@ -7,6 +7,7 @@
  *
  * @author sohai
  */
+import java.sql.*;
 public class addStaffFrame extends javax.swing.JFrame {
 
     /**
