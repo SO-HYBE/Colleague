@@ -496,10 +496,8 @@ public class StudentManager extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        studentsTable.setCellSelectionEnabled(false);
         studentsTable.setFocusable(false);
         studentsTable.setRowHeight(24);
-        studentsTable.setRowSelectionAllowed(true);
         studentsTable.setSelectionBackground(new java.awt.Color(70, 60, 60));
         studentsTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
         studentsTable.setShowGrid(true);
