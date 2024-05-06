@@ -14,12 +14,12 @@ import javax.swing.table.DefaultTableModel;
  */
 import java.sql.*;
 import javax.swing.*;
-public class addStudentFrame extends javax.swing.JFrame {
+public class editStudentFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form addStudentFrame
      */
-    public addStudentFrame() {
+    public editStudentFrame() {
         initComponents();
     }
 
@@ -42,10 +42,10 @@ public class addStudentFrame extends javax.swing.JFrame {
         txtLevelStudent = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         cancel = new javax.swing.JButton();
-        btnAddStudent = new javax.swing.JButton();
+        btnEditStudent = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Add Student");
+        setTitle("Edit Student");
         setBackground(new java.awt.Color(70, 60, 60));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -96,15 +96,15 @@ public class addStudentFrame extends javax.swing.JFrame {
             }
         });
 
-        btnAddStudent.setBackground(new java.awt.Color(80, 60, 60));
-        btnAddStudent.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 24)); // NOI18N
-        btnAddStudent.setForeground(new java.awt.Color(255, 255, 255));
-        btnAddStudent.setText("Add");
-        btnAddStudent.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        btnAddStudent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAddStudent.addActionListener(new java.awt.event.ActionListener() {
+        btnEditStudent.setBackground(new java.awt.Color(80, 60, 60));
+        btnEditStudent.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 24)); // NOI18N
+        btnEditStudent.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditStudent.setText("Edit");
+        btnEditStudent.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        btnEditStudent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddStudentActionPerformed(evt);
+                btnEditStudentActionPerformed(evt);
             }
         });
 
@@ -136,7 +136,7 @@ public class addStudentFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(239, Short.MAX_VALUE)
-                .addComponent(btnAddStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEditStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(243, 243, 243))
@@ -165,7 +165,7 @@ public class addStudentFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAddStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEditStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -179,24 +179,32 @@ public class addStudentFrame extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
-    private void btnAddStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddStudentActionPerformed
-        if(txtNameStudent.getText().equals("")
+    private void btnEditStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditStudentActionPerformed
+     if(txtNameStudent.getText().equals("")
                 ||txtIDStudent.getText().equals("")
                 ||txtGPAStudent.getText().equals("")
-                ||txtLevelStudent.getText().equals(""))
+                ||txtLevelStudent.getText().equals("")
+                )
         {
             JOptionPane.showMessageDialog(this,"Please enter all data!");
             
         }
         else
         {
-            String data[]={txtNameStudent.getText(),txtIDStudent.getText(),txtGPAStudent.getText(),txtLevelStudent.getText()};
+            String name = txtNameStudent.getText();
+            String ID = txtIDStudent.getText();
+            String GPA = txtGPAStudent.getText();
+            String level = txtLevelStudent.getText();
             DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getStudentsTable()).getModel();
-            tableModel.addRow(data);
-            //JOptionPane.showMessageDialog(this,"Successfully added data!");
-            dispose();  
+            tableModel.setValueAt(name, StudentManager.getStudentsTable().getSelectedRow(), 0);
+            tableModel.setValueAt(ID, StudentManager.getStudentsTable().getSelectedRow(), 1);
+            tableModel.setValueAt(GPA, StudentManager.getStudentsTable().getSelectedRow(), 2);
+            tableModel.setValueAt(level, StudentManager.getStudentsTable().getSelectedRow(), 3);
+            JOptionPane.showMessageDialog(this,"Data Edited Successfully!");
+            dispose();
+            
         }
-    }//GEN-LAST:event_btnAddStudentActionPerformed
+    }//GEN-LAST:event_btnEditStudentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,7 +243,7 @@ public class addStudentFrame extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddStudent;
+    private javax.swing.JButton btnEditStudent;
     private javax.swing.JButton cancel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
