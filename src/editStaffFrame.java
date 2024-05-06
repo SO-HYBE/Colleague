@@ -10,12 +10,12 @@
 import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-public class addStaffFrame extends javax.swing.JFrame {
+public class editStaffFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form addStaffFrame
      */
-    public addStaffFrame() {
+    public editStaffFrame() {
         initComponents();
     }
 
@@ -39,7 +39,7 @@ public class addStaffFrame extends javax.swing.JFrame {
         addAction = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Add Staff");
+        setTitle("Edit Staff");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(70, 60, 60));
@@ -88,7 +88,7 @@ public class addStaffFrame extends javax.swing.JFrame {
         addAction.setBackground(new java.awt.Color(80, 60, 60));
         addAction.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 24)); // NOI18N
         addAction.setForeground(new java.awt.Color(255, 255, 255));
-        addAction.setText("Add");
+        addAction.setText("Edit");
         addAction.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         addAction.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addAction.addActionListener(new java.awt.event.ActionListener() {
@@ -163,13 +163,17 @@ public class addStaffFrame extends javax.swing.JFrame {
         }
         else
         {
-            String data[]={txtNameStaff.getText(),txtIDStaff.getText(),txtPhoneStaff.getText()};
+            String name = txtNameStaff.getText();
+            String ID = txtIDStaff.getText();
+            String phone = txtPhoneStaff.getText();
             DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getStaffTable()).getModel();
-            tableModel.addRow(data);
-            //JOptionPane.showMessageDialog(this,"Successfully added data!");
+            tableModel.setValueAt(name, StudentManager.getStaffTable().getSelectedRow(), 0);
+            tableModel.setValueAt(ID, StudentManager.getStaffTable().getSelectedRow(), 1);
+            tableModel.setValueAt(phone, StudentManager.getStaffTable().getSelectedRow(), 2);
+            JOptionPane.showMessageDialog(this,"Data Edited Successfully!");
             dispose();
             
-        }
+       }
     }//GEN-LAST:event_addActionActionPerformed
 
     private void txtPhoneStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneStaffActionPerformed
