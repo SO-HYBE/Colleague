@@ -513,9 +513,16 @@ public class StudentManager extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         studentsTable.setFocusable(false);
@@ -643,9 +650,16 @@ public class StudentManager extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         coursesTable.setColumnSelectionAllowed(true);
@@ -811,11 +825,6 @@ public class StudentManager extends javax.swing.JFrame {
         gradeTable.setShowHorizontalLines(false);
         gradeTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane5.setViewportView(gradeTable);
-        if (gradeTable.getColumnModel().getColumnCount() > 0) {
-            gradeTable.getColumnModel().getColumn(0).setResizable(false);
-            gradeTable.getColumnModel().getColumn(1).setResizable(false);
-            gradeTable.getColumnModel().getColumn(2).setResizable(false);
-        }
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -1005,11 +1014,6 @@ public class StudentManager extends javax.swing.JFrame {
         staffTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(staffTable);
         staffTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        if (staffTable.getColumnModel().getColumnCount() > 0) {
-            staffTable.getColumnModel().getColumn(0).setResizable(false);
-            staffTable.getColumnModel().getColumn(1).setResizable(false);
-            staffTable.getColumnModel().getColumn(2).setResizable(false);
-        }
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
