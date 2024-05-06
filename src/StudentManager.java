@@ -618,6 +618,7 @@ public class StudentManager extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        coursesTable.setColumnSelectionAllowed(true);
         coursesTable.setFocusable(false);
         coursesTable.setRowHeight(24);
         coursesTable.setSelectionBackground(new java.awt.Color(70, 60, 60));
@@ -964,6 +965,7 @@ public class StudentManager extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        staffTable.setColumnSelectionAllowed(true);
         staffTable.setFocusable(false);
         staffTable.setRowHeight(24);
         staffTable.setSelectionBackground(new java.awt.Color(70, 60, 60));
