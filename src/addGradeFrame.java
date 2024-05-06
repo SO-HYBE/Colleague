@@ -175,7 +175,7 @@ public class addGradeFrame extends javax.swing.JFrame {
             String data[]={txtNameGrade.getText(),txtMarkGrade.getText(),txtGradeGrade.getText()};
             DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getGradeTable()).getModel();
             tableModel.addRow(data);
-            JOptionPane.showMessageDialog(this,"Successfully added data!");
+            //JOptionPane.showMessageDialog(this,"Successfully added data!");
             dispose();
             
         }

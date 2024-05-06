@@ -193,7 +193,7 @@ public class addStudentFrame extends javax.swing.JFrame {
             String data[]={txtNameStudent.getText(),txtIDStudent.getText(),txtGPAStudent.getText(),txtLevelStudent.getText()};
             DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getStudentsTable()).getModel();
             tableModel.addRow(data);
-            JOptionPane.showMessageDialog(this,"Successfully added data!");
+            //JOptionPane.showMessageDialog(this,"Successfully added data!");
             dispose();
             
         }

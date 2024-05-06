@@ -903,18 +903,14 @@ public class StudentManager extends javax.swing.JFrame {
         staffTable.setForeground(new java.awt.Color(62, 50, 50));
         staffTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Salah Ahmed",  new Integer(31231),  new Integer(11233235)},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Professor's Name", "ID", "Phone Number"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false
@@ -928,6 +924,7 @@ public class StudentManager extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        staffTable.setColumnSelectionAllowed(true);
         staffTable.setFocusable(false);
         staffTable.setRowHeight(24);
         staffTable.setSelectionBackground(new java.awt.Color(70, 60, 60));
@@ -1110,7 +1107,11 @@ public class StudentManager extends javax.swing.JFrame {
     public static javax.swing.JTable getGradeTable()
     {
         return gradeTable;
-    }        
+    }
+    public static javax.swing.JTable getStaffTable()
+    {
+        return staffTable;
+    }
     /**
      * @param args the command line arguments
      */
@@ -1219,7 +1220,7 @@ public class StudentManager extends javax.swing.JFrame {
     private javax.swing.JButton removeStaff;
     private javax.swing.JButton removeStud;
     private javax.swing.JButton staffButton;
-    private javax.swing.JTable staffTable;
+    private static javax.swing.JTable staffTable;
     private javax.swing.JButton studButton;
     private static javax.swing.JTable studentsTable;
     private javax.swing.JLabel txtStaffDash;

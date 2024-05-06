@@ -174,7 +174,7 @@ public class addCourseFrame extends javax.swing.JFrame {
             String data[]={txtNameCourse.getText(),txtIDCourse.getText(),txtLevelCourse.getText()};
             DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getCoursesTable()).getModel();
             tableModel.addRow(data);
-            JOptionPane.showMessageDialog(this,"Successfully added data!");
+            //JOptionPane.showMessageDialog(this,"Successfully added data!");
             dispose();
             
         }
