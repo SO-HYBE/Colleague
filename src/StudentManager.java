@@ -261,9 +261,9 @@ public class StudentManager extends javax.swing.JFrame {
                 .addComponent(studButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
                 .addComponent(couButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
+                .addGap(31, 31, 31)
                 .addComponent(gradButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(staffButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -302,44 +302,44 @@ public class StudentManager extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Courses");
+        jLabel7.setText("Recent Courses");
 
-        c1.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 14)); // NOI18N
+        c1.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 14)); // NOI18N
         c1.setForeground(new java.awt.Color(255, 255, 255));
         c1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        c1.setText("Communication Tech.");
+        c1.setText("OOP");
         c1.setToolTipText("");
         c1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        c2.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 14)); // NOI18N
+        c2.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 14)); // NOI18N
         c2.setForeground(new java.awt.Color(255, 255, 255));
         c2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         c2.setText("Discrete Maths");
         c2.setToolTipText("");
         c2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        c3.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 14)); // NOI18N
+        c3.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 14)); // NOI18N
         c3.setForeground(new java.awt.Color(255, 255, 255));
         c3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         c3.setText("Physics 2");
         c3.setToolTipText("");
         c3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        c5.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 14)); // NOI18N
+        c5.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 14)); // NOI18N
         c5.setForeground(new java.awt.Color(255, 255, 255));
         c5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         c5.setText("Signal Theory");
         c5.setToolTipText("");
         c5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        c6.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 14)); // NOI18N
+        c6.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 14)); // NOI18N
         c6.setForeground(new java.awt.Color(255, 255, 255));
         c6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         c6.setText("Circuit Theory");
         c6.setToolTipText("");
         c6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        c4.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 14)); // NOI18N
+        c4.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 14)); // NOI18N
         c4.setForeground(new java.awt.Color(255, 255, 255));
         c4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         c4.setText("Math 2");
@@ -364,30 +364,30 @@ public class StudentManager extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 20)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("Staff");
+        jLabel16.setText("Recent Staff");
 
-        staff1.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 14)); // NOI18N
+        staff1.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 14)); // NOI18N
         staff1.setForeground(new java.awt.Color(255, 255, 255));
         staff1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         staff1.setText("Dr. Youssef Kareem");
         staff1.setToolTipText("");
         staff1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        staff2.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 14)); // NOI18N
+        staff2.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 14)); // NOI18N
         staff2.setForeground(new java.awt.Color(255, 255, 255));
         staff2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         staff2.setText("Dr. Zeyad el-Bek");
         staff2.setToolTipText("");
         staff2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        staff4.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 14)); // NOI18N
+        staff4.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 14)); // NOI18N
         staff4.setForeground(new java.awt.Color(255, 255, 255));
         staff4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         staff4.setText("Dr. Essam Omar");
         staff4.setToolTipText("");
         staff4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        staff3.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 14)); // NOI18N
+        staff3.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 14)); // NOI18N
         staff3.setForeground(new java.awt.Color(255, 255, 255));
         staff3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         staff3.setText("Dr. Salah Ahmed");
@@ -428,30 +428,25 @@ public class StudentManager extends javax.swing.JFrame {
                                 .addGap(111, 111, 111)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtStudentsDash, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(96, 96, 96))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(104, 104, 104))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(staff1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(staff2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(staff3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(staff4, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(txtStaffDash, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(96, 96, 96))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(104, 104, 104)))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(staff1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(staff2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(staff3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(staff4, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -488,7 +483,7 @@ public class StudentManager extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(staff3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(staff4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         Dashboard.addTab("tab1", jPanel1);
