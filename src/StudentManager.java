@@ -12,6 +12,7 @@ import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.*;
 import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableModel;
 public class StudentManager extends javax.swing.JFrame {
 
     /**
@@ -229,7 +230,7 @@ public class StudentManager extends javax.swing.JFrame {
                 .addComponent(couButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
                 .addComponent(gradButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addComponent(staffButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -396,7 +397,7 @@ public class StudentManager extends javax.swing.JFrame {
                                 .addGap(111, 111, 111)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -472,29 +473,18 @@ public class StudentManager extends javax.swing.JFrame {
         studentsTable.setForeground(new java.awt.Color(62, 50, 50));
         studentsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Sohybe",  new Integer(1290391),  new Double(4.0),  new Integer(3)},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Name", "ID", "GPA", "Level"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
         });
         studentsTable.setFocusable(false);
@@ -505,13 +495,6 @@ public class StudentManager extends javax.swing.JFrame {
         studentsTable.setShowHorizontalLines(false);
         studentsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(studentsTable);
-        studentsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        if (studentsTable.getColumnModel().getColumnCount() > 0) {
-            studentsTable.getColumnModel().getColumn(0).setResizable(false);
-            studentsTable.getColumnModel().getColumn(1).setResizable(false);
-            studentsTable.getColumnModel().getColumn(2).setResizable(false);
-            studentsTable.getColumnModel().getColumn(3).setResizable(false);
-        }
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -605,31 +588,21 @@ public class StudentManager extends javax.swing.JFrame {
         coursesTable.setForeground(new java.awt.Color(62, 50, 50));
         coursesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Communication Technoloy",  new Integer(3),  new Integer(29)},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Course Name", "Credit Hours", "NO. Enrolled"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
         });
+        coursesTable.setColumnSelectionAllowed(true);
         coursesTable.setFocusable(false);
         coursesTable.setRowHeight(24);
         coursesTable.setSelectionBackground(new java.awt.Color(70, 60, 60));
@@ -639,11 +612,6 @@ public class StudentManager extends javax.swing.JFrame {
         coursesTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(coursesTable);
         coursesTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        if (coursesTable.getColumnModel().getColumnCount() > 0) {
-            coursesTable.getColumnModel().getColumn(0).setResizable(false);
-            coursesTable.getColumnModel().getColumn(1).setResizable(false);
-            coursesTable.getColumnModel().getColumn(2).setResizable(false);
-        }
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -735,17 +703,17 @@ public class StudentManager extends javax.swing.JFrame {
         gradeTable.setForeground(new java.awt.Color(255, 255, 255));
         gradeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Communication Technology",  new Integer(95), "A+"},
-                {"Discrete Maths",  new Integer(95), "A+"},
-                {"Object Oriented Programming",  new Integer(95), "A+"},
-                {"Math 2",  new Integer(95), "A+"}
+                {"Communication Technology", null, "A+"},
+                {"Discrete Maths", null, "A+"},
+                {"Object Oriented Programming", null, "A+"},
+                {"Math 2", null, "A+"}
             },
             new String [] {
                 "Course Name", "Mark (Max. 100)", "Grade"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false
@@ -1133,6 +1101,18 @@ public class StudentManager extends javax.swing.JFrame {
         courseFrame.setVisible(true);
     }//GEN-LAST:event_addCourseActionPerformed
 
+    public static javax.swing.JTable getStudentsTable()
+    {
+        return studentsTable;
+    }
+        public static javax.swing.JTable getCoursesTable()
+    {
+        return coursesTable;
+    }
+    public static javax.swing.JTable getGradeTable()
+    {
+        return gradeTable;
+    }        
     /**
      * @param args the command line arguments
      */
@@ -1189,14 +1169,14 @@ public class StudentManager extends javax.swing.JFrame {
     private javax.swing.JButton clearStaff;
     private javax.swing.JButton clearStud;
     private javax.swing.JButton couButton;
-    private javax.swing.JTable coursesTable;
+    private static javax.swing.JTable coursesTable;
     private javax.swing.JButton dashButton;
     private javax.swing.JButton editCourse;
     private javax.swing.JButton editGrades;
     private javax.swing.JButton editStaff;
     private javax.swing.JButton editStud;
     private javax.swing.JButton gradButton;
-    private javax.swing.JTable gradeTable;
+    private static javax.swing.JTable gradeTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1245,6 +1225,6 @@ public class StudentManager extends javax.swing.JFrame {
     private javax.swing.JButton staffButton;
     private javax.swing.JTable staffTable;
     private javax.swing.JButton studButton;
-    private javax.swing.JTable studentsTable;
+    private static javax.swing.JTable studentsTable;
     // End of variables declaration//GEN-END:variables
 }

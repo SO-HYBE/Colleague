@@ -47,28 +47,29 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="addAction" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                                   <Component id="cancel" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField1" min="-2" pref="170" max="-2" attributes="0"/>
-                                  <EmptySpace pref="125" max="32767" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="txtNameCourse" min="-2" pref="170" max="-2" attributes="0"/>
+                                  <EmptySpace pref="48" max="32767" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="jTextField3" min="-2" pref="170" max="-2" attributes="0"/>
+                          <Component id="txtIDCourse" min="-2" pref="170" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" pref="120" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="jTextField4" min="-2" pref="170" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtLevelCourse" min="-2" pref="170" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -83,15 +84,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Component id="jTextField1" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="txtNameCourse" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                          <Component id="jTextField3" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="txtIDCourse" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="jLabel3" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -99,13 +100,13 @@
                       <Component id="jLabel4" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                          <Component id="jTextField4" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="txtLevelCourse" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="cancel" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="addAction" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="cancel" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -122,10 +123,10 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="ID"/>
+            <Property name="text" type="java.lang.String" value="Credit Hours"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
+        <Component class="javax.swing.JTextField" name="txtIDCourse">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d9" green="d9" red="d9" type="rgb"/>
@@ -147,7 +148,7 @@
             <Property name="text" type="java.lang.String" value="Course Name"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="txtNameCourse">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d9" green="d9" red="d9" type="rgb"/>
@@ -157,7 +158,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="txtLevelCourse">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d9" green="d9" red="d9" type="rgb"/>
@@ -176,7 +177,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Level"/>
+            <Property name="text" type="java.lang.String" value="No. enrolled"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="cancel">

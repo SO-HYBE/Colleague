@@ -1,3 +1,7 @@
+
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -27,10 +31,10 @@ public class addGradeFrame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtMarkGrade = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txtNameGrade = new javax.swing.JTextField();
+        txtGradeGrade = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         cancel = new javax.swing.JButton();
         addAction = new javax.swing.JButton();
@@ -46,24 +50,29 @@ public class addGradeFrame extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Mark (Max. 100)");
 
-        jTextField3.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
+        txtMarkGrade.setBackground(new java.awt.Color(217, 217, 217));
+        txtMarkGrade.setForeground(new java.awt.Color(0, 0, 0));
+        txtMarkGrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMarkGradeActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Course Name");
 
-        jTextField1.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        txtNameGrade.setBackground(new java.awt.Color(217, 217, 217));
+        txtNameGrade.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField4.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
+        txtGradeGrade.setBackground(new java.awt.Color(217, 217, 217));
+        txtGradeGrade.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel4.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Level");
+        jLabel4.setText("Grade");
 
         cancel.setBackground(new java.awt.Color(80, 60, 60));
         cancel.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 24)); // NOI18N
@@ -98,17 +107,17 @@ public class addGradeFrame extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNameGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(193, 193, 193)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtGradeGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(20, 20, 20)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtMarkGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(246, Short.MAX_VALUE)
@@ -125,15 +134,15 @@ public class addGradeFrame extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtMarkGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(2, 2, 2))
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNameGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField4)
+                    .addComponent(txtGradeGrade)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -153,8 +162,28 @@ public class addGradeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelActionPerformed
 
     private void addActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionActionPerformed
-        dispose();
+
+        if(txtNameGrade.getText().equals("")
+           ||txtMarkGrade.getText().equals("")               
+           ||txtGradeGrade.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(this,"Please enter all data!");
+            
+        }
+        else
+        {
+            String data[]={txtNameGrade.getText(),txtMarkGrade.getText(),txtGradeGrade.getText()};
+            DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getGradeTable()).getModel();
+            tableModel.addRow(data);
+            JOptionPane.showMessageDialog(this,"Successfully added data!");
+            dispose();
+            
+        }
     }//GEN-LAST:event_addActionActionPerformed
+
+    private void txtMarkGradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMarkGradeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMarkGradeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,8 +227,8 @@ public class addGradeFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField txtGradeGrade;
+    private javax.swing.JTextField txtMarkGrade;
+    private javax.swing.JTextField txtNameGrade;
     // End of variables declaration//GEN-END:variables
 }

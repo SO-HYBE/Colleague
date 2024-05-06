@@ -1,6 +1,7 @@
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -12,6 +13,7 @@ import java.awt.event.WindowEvent;
  * @author sohai
  */
 import java.sql.*;
+import javax.swing.*;
 public class addStudentFrame extends javax.swing.JFrame {
 
     /**
@@ -32,15 +34,15 @@ public class addStudentFrame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtIDStudent = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtGPAStudent = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txtNameStudent = new javax.swing.JTextField();
+        txtLevelStudent = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         cancel = new javax.swing.JButton();
-        addAction = new javax.swing.JButton();
+        btnAddStudent = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Add Student");
@@ -55,27 +57,27 @@ public class addStudentFrame extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("ID");
 
-        jTextField3.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
+        txtIDStudent.setBackground(new java.awt.Color(217, 217, 217));
+        txtIDStudent.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel2.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("GPA");
 
-        jTextField2.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
+        txtGPAStudent.setBackground(new java.awt.Color(217, 217, 217));
+        txtGPAStudent.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Name");
 
-        jTextField1.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        txtNameStudent.setBackground(new java.awt.Color(217, 217, 217));
+        txtNameStudent.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField4.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
+        txtLevelStudent.setBackground(new java.awt.Color(217, 217, 217));
+        txtLevelStudent.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel4.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -94,15 +96,15 @@ public class addStudentFrame extends javax.swing.JFrame {
             }
         });
 
-        addAction.setBackground(new java.awt.Color(80, 60, 60));
-        addAction.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 24)); // NOI18N
-        addAction.setForeground(new java.awt.Color(255, 255, 255));
-        addAction.setText("Add");
-        addAction.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        addAction.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        addAction.addActionListener(new java.awt.event.ActionListener() {
+        btnAddStudent.setBackground(new java.awt.Color(80, 60, 60));
+        btnAddStudent.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 24)); // NOI18N
+        btnAddStudent.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddStudent.setText("Add");
+        btnAddStudent.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        btnAddStudent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addActionActionPerformed(evt);
+                btnAddStudentActionPerformed(evt);
             }
         });
 
@@ -116,25 +118,25 @@ public class addStudentFrame extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNameStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtGPAStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtIDStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtLevelStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(239, Short.MAX_VALUE)
-                .addComponent(addAction, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAddStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(243, 243, 243))
@@ -149,8 +151,8 @@ public class addStudentFrame extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtNameStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtIDStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -158,12 +160,12 @@ public class addStudentFrame extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtGPAStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtLevelStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addAction, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAddStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -177,9 +179,25 @@ public class addStudentFrame extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
-    private void addActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionActionPerformed
-        dispose();
-    }//GEN-LAST:event_addActionActionPerformed
+    private void btnAddStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddStudentActionPerformed
+        if(txtNameStudent.getText().equals("")
+                ||txtIDStudent.getText().equals("")
+                ||txtGPAStudent.getText().equals("")
+                ||txtLevelStudent.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(this,"Please enter all data!");
+            
+        }
+        else
+        {
+            String data[]={txtNameStudent.getText(),txtIDStudent.getText(),txtGPAStudent.getText(),txtLevelStudent.getText()};
+            DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getStudentsTable()).getModel();
+            tableModel.addRow(data);
+            JOptionPane.showMessageDialog(this,"Successfully added data!");
+            dispose();
+            
+        }
+    }//GEN-LAST:event_btnAddStudentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,16 +236,16 @@ public class addStudentFrame extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addAction;
+    private javax.swing.JButton btnAddStudent;
     private javax.swing.JButton cancel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField txtGPAStudent;
+    private javax.swing.JTextField txtIDStudent;
+    private javax.swing.JTextField txtLevelStudent;
+    private javax.swing.JTextField txtNameStudent;
     // End of variables declaration//GEN-END:variables
 }

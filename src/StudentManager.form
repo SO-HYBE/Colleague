@@ -37,7 +37,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-118,0,0,3,80"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-118,0,0,3,-110"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -111,7 +111,7 @@
                   <Component id="couButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="gradButton" min="-2" pref="150" max="-2" attributes="0"/>
-                  <EmptySpace pref="35" max="32767" attributes="0"/>
+                  <EmptySpace pref="41" max="32767" attributes="0"/>
                   <Component id="staffButton" min="-2" pref="130" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -401,7 +401,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="66" max="32767" attributes="0"/>
+                          <EmptySpace pref="72" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                   <Component id="jLabel15" alignment="0" min="-2" pref="390" max="-2" attributes="0"/>
@@ -853,55 +853,31 @@
                               <Color blue="32" green="32" red="3e" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="4" rowCount="5">
-                                <Column editable="false" title="Name" type="java.lang.String">
-                                  <Data value="Sohybe"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                </Column>
-                                <Column editable="false" title="ID" type="java.lang.Integer">
-                                  <Data value="1290391"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                </Column>
-                                <Column editable="false" title="GPA" type="java.lang.Double">
-                                  <Data value="4.0"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                </Column>
-                                <Column editable="false" title="Level" type="java.lang.Integer">
-                                  <Data value="3"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                </Column>
+                              <Table columnCount="4" rowCount="0">
+                                <Column editable="true" title="Name" type="java.lang.String"/>
+                                <Column editable="true" title="ID" type="java.lang.String"/>
+                                <Column editable="true" title="GPA" type="java.lang.String"/>
+                                <Column editable="true" title="Level" type="java.lang.String"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="2">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -922,6 +898,9 @@
                               <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1145,49 +1124,32 @@
                               <Color blue="32" green="32" red="3e" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="3" rowCount="5">
-                                <Column editable="false" title="Course Name" type="java.lang.String">
-                                  <Data value="Communication Technoloy"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                </Column>
-                                <Column editable="false" title="Credit Hours" type="java.lang.Integer">
-                                  <Data value="3"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                </Column>
-                                <Column editable="false" title="NO. Enrolled" type="java.lang.Integer">
-                                  <Data value="29"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                  <Data value="null"/>
-                                </Column>
+                              <Table columnCount="3" rowCount="0">
+                                <Column editable="true" title="Course Name" type="java.lang.String"/>
+                                <Column editable="true" title="Credit Hours" type="java.lang.String"/>
+                                <Column editable="true" title="NO. Enrolled" type="java.lang.String"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="2">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
                               </TableColumnModel>
                             </Property>
+                            <Property name="columnSelectionAllowed" type="boolean" value="true"/>
                             <Property name="focusable" type="boolean" value="false"/>
                             <Property name="rowHeight" type="int" value="24"/>
                             <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1202,6 +1164,9 @@
                               <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1472,12 +1437,7 @@
                               <Data value="Object Oriented Programming"/>
                               <Data value="Math 2"/>
                             </Column>
-                            <Column editable="false" title="Mark (Max. 100)" type="java.lang.Integer">
-                              <Data value="95"/>
-                              <Data value="95"/>
-                              <Data value="95"/>
-                              <Data value="95"/>
-                            </Column>
+                            <Column editable="false" title="Mark (Max. 100)" type="java.lang.String"/>
                             <Column editable="false" title="Grade" type="java.lang.String">
                               <Data value="A+"/>
                               <Data value="A+"/>
@@ -1522,6 +1482,9 @@
                           <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
