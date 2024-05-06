@@ -8,6 +8,9 @@
  * @author sohai
  */
 import java.sql.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.awt.Color;
 import javax.swing.*;
 import java.awt.Toolkit;
@@ -26,6 +29,35 @@ public class StudentManager extends javax.swing.JFrame {
     Color selected = new Color(80,60, 60);
     Color unSelected = new Color(168, 124, 124);
     public StudentManager() {
+        addWindowListener(new WindowAdapter() {
+            public void windowOpened(WindowEvent e) {
+                //Code for changing the Dashboard after adding a new staff
+                txtStudentsDash();
+                //Code for changing the Dashboard after adding a new staff
+                txtStaffDash();
+                //Code for changing the name of staff after adding/removing a new staff
+                try{
+                staff1.setText("" + staffTable.getValueAt(0,0));
+                staff2.setText("" + staffTable.getValueAt(1,0));
+                staff3.setText("" + staffTable.getValueAt(2,0));
+                staff4.setText("" + staffTable.getValueAt(3,0));
+                } catch (IndexOutOfBoundsException ex){
+                    // there is not enough rows in the table to be in the dashboard
+                }
+                //Code for changing the name of staff after adding/removing a new course
+                try{
+                c1.setText("" + coursesTable.getValueAt(0,0));
+                c2.setText("" + coursesTable.getValueAt(1,0));
+                c3.setText("" + coursesTable.getValueAt(2,0));
+                c4.setText("" + coursesTable.getValueAt(3,0));
+                c5.setText("" + coursesTable.getValueAt(4,0));
+                c6.setText("" + coursesTable.getValueAt(5,0));
+                } catch (IndexOutOfBoundsException ex){
+                    // there is not enough rows in the table to be in the dashboard
+                }
+            }
+    });
+        
         initComponents();
         this.setLocationRelativeTo(null);
         labelPic.setText("");
@@ -264,7 +296,6 @@ public class StudentManager extends javax.swing.JFrame {
         txtStudentsDash.setFont(new java.awt.Font("Fira Sans Extra Condensed Mediu", 1, 64)); // NOI18N
         txtStudentsDash.setForeground(new java.awt.Color(255, 255, 255));
         txtStudentsDash.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtStudentsDash.setText("20");
         txtStudentsDash.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtStudentsDash.setOpaque(true);
 
@@ -324,10 +355,9 @@ public class StudentManager extends javax.swing.JFrame {
         jLabel14.setPreferredSize(new java.awt.Dimension(190, 59));
 
         txtStaffDash.setBackground(new java.awt.Color(70, 60, 60));
-        txtStaffDash.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 64)); // NOI18N
+        txtStaffDash.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 1, 64)); // NOI18N
         txtStaffDash.setForeground(new java.awt.Color(255, 255, 255));
         txtStaffDash.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtStaffDash.setText("10");
         txtStaffDash.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtStaffDash.setOpaque(true);
 
@@ -1082,7 +1112,16 @@ public class StudentManager extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+       public void txtStudentsDash() {
+        // Update the text of the label with the row count of the table
+        txtStudentsDash.setText(""+studentsTable.getRowCount());
+    }
+       public void txtStaffDash() {
+        // Update the text of the label with the row count of the table
+        txtStaffDash.setText(""+staffTable.getRowCount());
+    }
+       
     private void dashButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashButtonActionPerformed
         mainTab.setSelectedIndex(0);
         dashButton.setBackground(selected);
@@ -1090,31 +1129,30 @@ public class StudentManager extends javax.swing.JFrame {
         studButton.setBackground(unSelected);
         couButton.setBackground(unSelected);
         gradButton.setBackground(unSelected);
-        
-        //Code for changing the Dashboard after adding a new student
-        txtStudentsDash.setText("" + studentsTable.getSelectedRowCount());
-        //Code for changing the Dashboard after adding a new staff
-        txtStaffDash.setText("" + staffTable.getSelectedRowCount());
-        //Code for changing the name of staff after adding/removing a new staff
-        try{
-        staff1.setText("" + staffTable.getValueAt(0,0));
-        staff2.setText("" + staffTable.getValueAt(1,0));
-        staff3.setText("" + staffTable.getValueAt(2,0));
-        staff4.setText("" + staffTable.getValueAt(3,0));
-        } catch (IndexOutOfBoundsException e){
-            // there is not enough rows in the table to be in the dashboard
-        }
-        //Code for changing the name of staff after adding/removing a new course
-        try{
-        c1.setText("" + coursesTable.getValueAt(0,0));
-        c2.setText("" + coursesTable.getValueAt(1,0));
-        c3.setText("" + coursesTable.getValueAt(2,0));
-        c4.setText("" + coursesTable.getValueAt(3,0));
-        c5.setText("" + coursesTable.getValueAt(4,0));
-        c6.setText("" + coursesTable.getValueAt(5,0));
-        } catch (IndexOutOfBoundsException e){
-            // there is not enough rows in the table to be in the dashboard
-        }
+                //Code for changing the Dashboard after adding a new staff
+                txtStudentsDash();
+                //Code for changing the Dashboard after adding a new staff
+                txtStaffDash();
+                //Code for changing the name of staff after adding/removing a new staff
+                try{
+                staff1.setText("" + staffTable.getValueAt(0,0));
+                staff2.setText("" + staffTable.getValueAt(1,0));
+                staff3.setText("" + staffTable.getValueAt(2,0));
+                staff4.setText("" + staffTable.getValueAt(3,0));
+                } catch (IndexOutOfBoundsException ex){
+                    // there is not enough rows in the table to be in the dashboard
+                }
+                //Code for changing the name of staff after adding/removing a new course
+                try{
+                c1.setText("" + coursesTable.getValueAt(0,0));
+                c2.setText("" + coursesTable.getValueAt(1,0));
+                c3.setText("" + coursesTable.getValueAt(2,0));
+                c4.setText("" + coursesTable.getValueAt(3,0));
+                c5.setText("" + coursesTable.getValueAt(4,0));
+                c6.setText("" + coursesTable.getValueAt(5,0));
+                } catch (IndexOutOfBoundsException ex){
+                    // there is not enough rows in the table to be in the dashboard
+                }
     }//GEN-LAST:event_dashButtonActionPerformed
 
     private void studButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studButtonActionPerformed
