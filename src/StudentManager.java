@@ -1340,6 +1340,7 @@ public class StudentManager extends javax.swing.JFrame {
                 if(txtIDGrades.getText().equals(studentsTable.getValueAt(i,1)))
                 {
                     txtGPAGrades.setText(""+String.valueOf(studentsTable.getValueAt(i,2)));
+                    found=true;
                     break;
                 }    
             }
