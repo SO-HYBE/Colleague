@@ -8,6 +8,8 @@
  * @author sohai
  */
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class addCourseFrame extends javax.swing.JFrame {
@@ -18,6 +20,7 @@ public class addCourseFrame extends javax.swing.JFrame {
     public addCourseFrame() {
         initComponents();
     }
+    PreparedStatement pst;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,10 +33,10 @@ public class addCourseFrame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        txtIDCourse = new javax.swing.JTextField();
+        txtHoursCourse = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         txtNameCourse = new javax.swing.JTextField();
-        txtLevelCourse = new javax.swing.JTextField();
+        txtEnrolledCourse = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         cancel = new javax.swing.JButton();
         addAction = new javax.swing.JButton();
@@ -50,8 +53,8 @@ public class addCourseFrame extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Credit Hours");
 
-        txtIDCourse.setBackground(new java.awt.Color(217, 217, 217));
-        txtIDCourse.setForeground(new java.awt.Color(0, 0, 0));
+        txtHoursCourse.setBackground(new java.awt.Color(217, 217, 217));
+        txtHoursCourse.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -61,8 +64,8 @@ public class addCourseFrame extends javax.swing.JFrame {
         txtNameCourse.setBackground(new java.awt.Color(217, 217, 217));
         txtNameCourse.setForeground(new java.awt.Color(0, 0, 0));
 
-        txtLevelCourse.setBackground(new java.awt.Color(217, 217, 217));
-        txtLevelCourse.setForeground(new java.awt.Color(0, 0, 0));
+        txtEnrolledCourse.setBackground(new java.awt.Color(217, 217, 217));
+        txtEnrolledCourse.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel4.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -115,12 +118,12 @@ public class addCourseFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                                 .addComponent(jLabel3)
                                 .addGap(0, 12, Short.MAX_VALUE)))
-                        .addComponent(txtIDCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtHoursCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(155, 155, 155)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtLevelCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtEnrolledCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -134,7 +137,7 @@ public class addCourseFrame extends javax.swing.JFrame {
                         .addComponent(txtNameCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
-                        .addComponent(txtIDCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtHoursCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -142,7 +145,7 @@ public class addCourseFrame extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(txtLevelCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtEnrolledCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addAction, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -161,16 +164,25 @@ public class addCourseFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelActionPerformed
 
     private void addActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionActionPerformed
-                if(txtNameCourse.getText().equals("")
-                ||txtIDCourse.getText().equals("")               
-                ||txtLevelCourse.getText().equals(""))
+     if(txtNameCourse.getText().equals("")
+        ||txtHoursCourse.getText().equals("")               
+        ||txtEnrolledCourse.getText().equals(""))
         {
             JOptionPane.showMessageDialog(this,"Please enter all data!");
             
         }
         else
         {
-            String data[]={txtNameCourse.getText(),txtIDCourse.getText(),txtLevelCourse.getText()};
+            try {
+            pst = databaseConnection.connection().prepareStatement("insert into courses(Name,hours,enrolled) values(?,?,?)");
+            pst.setString(1,txtNameCourse.getText());
+            pst.setString(2,txtHoursCourse.getText());
+            pst.setString(3,txtEnrolledCourse.getText());
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(addStudentFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            String data[]={txtNameCourse.getText(),txtHoursCourse.getText(),txtEnrolledCourse.getText()};
             DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getCoursesTable()).getModel();
             tableModel.addRow(data);
             //JOptionPane.showMessageDialog(this,"Successfully added data!");
@@ -224,8 +236,8 @@ public class addCourseFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtIDCourse;
-    private javax.swing.JTextField txtLevelCourse;
+    private javax.swing.JTextField txtEnrolledCourse;
+    private javax.swing.JTextField txtHoursCourse;
     private javax.swing.JTextField txtNameCourse;
     // End of variables declaration//GEN-END:variables
 }

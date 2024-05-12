@@ -8,6 +8,8 @@
  * @author sohai
  */
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class addStaffFrame extends javax.swing.JFrame {
@@ -153,6 +155,7 @@ public class addStaffFrame extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
+    PreparedStatement pst;
     private void addActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionActionPerformed
         if(txtNameStaff.getText().equals("")
            ||txtIDStaff.getText().equals("")               
@@ -163,6 +166,15 @@ public class addStaffFrame extends javax.swing.JFrame {
         }
         else
         {
+            try {
+            pst = databaseConnection.connection().prepareStatement("insert into staff(Name,ID,phone) values(?,?,?)");
+            pst.setString(1,txtNameStaff.getText());
+            pst.setString(2,txtIDStaff.getText());
+            pst.setString(3,txtPhoneStaff.getText());
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(addStudentFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
             String data[]={txtNameStaff.getText(),txtIDStaff.getText(),txtPhoneStaff.getText()};
             DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getStaffTable()).getModel();
             tableModel.addRow(data);

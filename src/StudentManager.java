@@ -1204,6 +1204,9 @@ public class StudentManager extends javax.swing.JFrame {
         if(staffTable.getSelectedRowCount()==1){
             editStaffFrame editStaff = new editStaffFrame();
             editStaff.setVisible(true);
+            editStaffFrame.txtNameStaff.setText(""+staffTable.getValueAt(staffTable.getSelectedRow(), 0));
+            editStaffFrame.txtIDStaff.setText(""+staffTable.getValueAt(staffTable.getSelectedRow(), 1));
+            editStaffFrame.txtPhoneStaff.setText(""+staffTable.getValueAt(staffTable.getSelectedRow(), 2));
         } else {
             JOptionPane.showMessageDialog(this, "Please Select one row to be Edited!");
         }

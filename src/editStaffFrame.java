@@ -8,6 +8,8 @@
  * @author sohai
  */
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class editStaffFrame extends javax.swing.JFrame {
@@ -153,6 +155,7 @@ public class editStaffFrame extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
+    PreparedStatement pst;
     private void addActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionActionPerformed
         if(txtNameStaff.getText().equals("")
            ||txtIDStaff.getText().equals("")               
@@ -170,6 +173,23 @@ public class editStaffFrame extends javax.swing.JFrame {
             tableModel.setValueAt(name, StudentManager.getStaffTable().getSelectedRow(), 0);
             tableModel.setValueAt(ID, StudentManager.getStaffTable().getSelectedRow(), 1);
             tableModel.setValueAt(phone, StudentManager.getStaffTable().getSelectedRow(), 2);
+            try {
+                //databaseConnection.connection();
+                //Statement st=databaseConnection.connection().createStatement();
+                pst = databaseConnection.connection().prepareStatement("UPDATE staff SET Name='" + txtNameStaff.getText() + "', " + "ID='" 
+                    + txtIDStaff.getText() + "', phone='" + txtPhoneStaff.getText() + "' "
+                    + "WHERE ID='" + StudentManager.getStaffTable().getValueAt(StudentManager.getStaffTable().getSelectedRow(), 1) + "'");
+                pst.executeUpdate();
+//                    boolean b = st.execute("UPDATE staff SET Name='" + txtNameStaff.getText() + "', "
+//                    + "ID='" + txtIDStaff.getText() + "', phone='" + txtPhoneStaff.getText() + "' "
+//                    + "WHERE ID='" + StudentManager.getStaffTable().getValueAt(StudentManager.getStaffTable().getSelectedRow(), 1) + "'");
+//                if(!b)
+//                {
+//                    JOptionPane.showMessageDialog(null, "Error");
+//                }
+            } catch (SQLException ex) {
+                Logger.getLogger(editStaffFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
             JOptionPane.showMessageDialog(this,"Data Edited Successfully!");
             dispose();
             
@@ -222,8 +242,8 @@ public class editStaffFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtIDStaff;
-    private javax.swing.JTextField txtNameStaff;
-    private javax.swing.JTextField txtPhoneStaff;
+    public static javax.swing.JTextField txtIDStaff;
+    public static javax.swing.JTextField txtNameStaff;
+    public static javax.swing.JTextField txtPhoneStaff;
     // End of variables declaration//GEN-END:variables
 }
