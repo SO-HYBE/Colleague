@@ -8,6 +8,8 @@
  * @author sohai
  */
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class editCourseFrame extends javax.swing.JFrame {
@@ -33,7 +35,7 @@ public class editCourseFrame extends javax.swing.JFrame {
         txtHoursCourse = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         txtNameCourse = new javax.swing.JTextField();
-        txtNoCourse = new javax.swing.JTextField();
+        txtEnrolledCourse = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         cancel = new javax.swing.JButton();
         addAction = new javax.swing.JButton();
@@ -61,8 +63,8 @@ public class editCourseFrame extends javax.swing.JFrame {
         txtNameCourse.setBackground(new java.awt.Color(217, 217, 217));
         txtNameCourse.setForeground(new java.awt.Color(0, 0, 0));
 
-        txtNoCourse.setBackground(new java.awt.Color(217, 217, 217));
-        txtNoCourse.setForeground(new java.awt.Color(0, 0, 0));
+        txtEnrolledCourse.setBackground(new java.awt.Color(217, 217, 217));
+        txtEnrolledCourse.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel4.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -120,7 +122,7 @@ public class editCourseFrame extends javax.swing.JFrame {
                         .addGap(155, 155, 155)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNoCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtEnrolledCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -143,7 +145,7 @@ public class editCourseFrame extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(txtNoCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtEnrolledCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addAction, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -161,19 +163,30 @@ public class editCourseFrame extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
+    PreparedStatement pst;
     private void addActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionActionPerformed
         if(txtNameCourse.getText().equals("")
                 ||txtHoursCourse.getText().equals("")               
-                ||txtNoCourse.getText().equals(""))
+                ||txtEnrolledCourse.getText().equals(""))
         {
             JOptionPane.showMessageDialog(this,"Please enter all data!");
             
         }
         else
         {
+            try {
+            pst = databaseConnection.connection().prepareStatement("UPDATE courses SET Name=?,hours=?,enrolled=? WHERE Name=?");
+            pst.setString(1,txtNameCourse.getText());
+            pst.setString(2,txtHoursCourse.getText());
+            pst.setString(3,txtEnrolledCourse.getText());
+            pst.setString(4,StudentManager.getCoursesTable().getValueAt(StudentManager.getCoursesTable().getSelectedRow(), 0).toString());
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(editCourseFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
             String name = txtNameCourse.getText();
             String hours = txtHoursCourse.getText();
-            String level = txtNoCourse.getText();
+            String level = txtEnrolledCourse.getText();
             DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getCoursesTable()).getModel();
             tableModel.setValueAt(name, StudentManager.getCoursesTable().getSelectedRow(), 0);
             tableModel.setValueAt(hours, StudentManager.getCoursesTable().getSelectedRow(), 1);
@@ -227,8 +240,8 @@ public class editCourseFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtHoursCourse;
-    private javax.swing.JTextField txtNameCourse;
-    private javax.swing.JTextField txtNoCourse;
+    public static javax.swing.JTextField txtEnrolledCourse;
+    public static javax.swing.JTextField txtHoursCourse;
+    public static javax.swing.JTextField txtNameCourse;
     // End of variables declaration//GEN-END:variables
 }

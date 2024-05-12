@@ -1,4 +1,3 @@
-
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import javax.swing.table.DefaultTableModel;
@@ -13,6 +12,8 @@ import javax.swing.table.DefaultTableModel;
  * @author sohai
  */
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 public class editStudentFrame extends javax.swing.JFrame {
 
@@ -179,18 +180,30 @@ public class editStudentFrame extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
+    PreparedStatement pst;
     private void btnEditStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditStudentActionPerformed
-     if(txtNameStudent.getText().equals("")
-                ||txtIDStudent.getText().equals("")
-                ||txtGPAStudent.getText().equals("")
-                ||txtLevelStudent.getText().equals("")
-                )
+        if(txtNameStudent.getText().equals("")
+           ||txtIDStudent.getText().equals("")
+           ||txtGPAStudent.getText().equals("")
+           ||txtLevelStudent.getText().equals("")
+            )
         {
             JOptionPane.showMessageDialog(this,"Please enter all data!");
             
         }
         else
         {
+            try {
+            pst = databaseConnection.connection().prepareStatement("UPDATE students SET Name='" + txtNameStudent.getText() + "', " + "ID='" 
+                + txtIDStudent.getText() + "', GPA=?"
+                + ", Level='" + txtLevelStudent.getText() + "' "
+                + "WHERE ID='" + StudentManager.getStudentsTable().getValueAt(StudentManager.getStudentsTable().getSelectedRow(), 1) + "'");
+            pst.setDouble(1,Double.parseDouble(txtGPAStudent.getText()));
+                pst.executeUpdate();
+            } 
+        catch (SQLException ex) {
+            Logger.getLogger(editStaffFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
             String name = txtNameStudent.getText();
             String ID = txtIDStudent.getText();
             String GPA = txtGPAStudent.getText();
@@ -250,9 +263,9 @@ public class editStudentFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtGPAStudent;
-    private javax.swing.JTextField txtIDStudent;
-    private javax.swing.JTextField txtLevelStudent;
-    private javax.swing.JTextField txtNameStudent;
+    public static javax.swing.JTextField txtGPAStudent;
+    public static javax.swing.JTextField txtIDStudent;
+    public static javax.swing.JTextField txtLevelStudent;
+    public static javax.swing.JTextField txtNameStudent;
     // End of variables declaration//GEN-END:variables
 }

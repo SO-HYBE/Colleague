@@ -157,14 +157,7 @@ public class editStaffFrame extends javax.swing.JFrame {
 
     PreparedStatement pst;
     private void addActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionActionPerformed
-            try {
-                pst = databaseConnection.connection().prepareStatement("UPDATE staff SET Name='" + txtNameStaff.getText() + "', " + "ID='" 
-                    + txtIDStaff.getText() + "', phone='" + txtPhoneStaff.getText() + "' "
-                    + "WHERE ID='" + StudentManager.getStaffTable().getValueAt(StudentManager.getStaffTable().getSelectedRow(), 1) + "'");
-                pst.executeUpdate();
-            } catch (SQLException ex) {
-                Logger.getLogger(editStaffFrame.class.getName()).log(Level.SEVERE, null, ex);
-            }
+
         if(txtNameStaff.getText().equals("")
            ||txtIDStaff.getText().equals("")               
            ||txtPhoneStaff.getText().equals(""))
@@ -174,6 +167,15 @@ public class editStaffFrame extends javax.swing.JFrame {
         }
         else
         {
+            try {
+            pst = databaseConnection.connection().prepareStatement("UPDATE staff SET Name='" + txtNameStaff.getText() + "', " + "ID='" 
+                + txtIDStaff.getText() + "', phone='" + txtPhoneStaff.getText() + "' "
+                + "WHERE ID='" + StudentManager.getStaffTable().getValueAt(StudentManager.getStaffTable().getSelectedRow(), 1) + "'");
+                pst.executeUpdate();
+            } 
+        catch (SQLException ex) {
+            Logger.getLogger(editStaffFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
             String name = txtNameStaff.getText();
             String ID = txtIDStaff.getText();
             String phone = txtPhoneStaff.getText();

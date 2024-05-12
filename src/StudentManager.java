@@ -35,16 +35,11 @@ public class StudentManager extends javax.swing.JFrame {
     Color selected = new Color(80,60, 60);
     Color unSelected = new Color(168, 124, 124);
     public StudentManager() {
-        
-//        try {
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//            con = DriverManager.getConnection(url,username,password);
-//        } catch (ClassNotFoundException ex) {
-//            Logger.getLogger(StudentManager.class.getName()).log(Level.SEVERE, null, ex);   
-//        } catch (SQLException ex) {
-//            Logger.getLogger(StudentManager.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-        
+        initComponents();
+        this.setLocationRelativeTo(null);
+        labelPic.setText("");
+        labelPic.setIcon(logo);
+               
         addWindowListener(new WindowAdapter() {
         public void windowOpened(WindowEvent e) {
                         //studentsTable = new JTable();
@@ -78,11 +73,6 @@ public class StudentManager extends javax.swing.JFrame {
                 }
             }
     });
-        
-        initComponents();
-        this.setLocationRelativeTo(null);
-        labelPic.setText("");
-        labelPic.setIcon(logo);
     }
     //....................................
 
@@ -661,7 +651,6 @@ public class StudentManager extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        coursesTable.setColumnSelectionAllowed(true);
         coursesTable.setFocusable(false);
         coursesTable.setRowHeight(24);
         coursesTable.setSelectionBackground(new java.awt.Color(70, 60, 60));
@@ -670,7 +659,6 @@ public class StudentManager extends javax.swing.JFrame {
         coursesTable.setShowHorizontalLines(false);
         coursesTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(coursesTable);
-        coursesTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1216,6 +1204,10 @@ public class StudentManager extends javax.swing.JFrame {
         if(studentsTable.getSelectedRowCount() == 1){
             editStudentFrame editStudent = new editStudentFrame();
             editStudent.setVisible(true);  
+            editStudentFrame.txtNameStudent.setText(""+studentsTable.getValueAt(studentsTable.getSelectedRow(), 0));
+            editStudentFrame.txtIDStudent.setText(""+studentsTable.getValueAt(studentsTable.getSelectedRow(), 1));
+            editStudentFrame.txtGPAStudent.setText(""+studentsTable.getValueAt(studentsTable.getSelectedRow(), 2));
+            editStudentFrame.txtLevelStudent.setText(""+studentsTable.getValueAt(studentsTable.getSelectedRow(), 3));
         } else {
             JOptionPane.showMessageDialog(this, "Please Select one row to be Edited!");
         }
@@ -1234,17 +1226,29 @@ public class StudentManager extends javax.swing.JFrame {
         if(coursesTable.getSelectedRowCount()==1){
             editCourseFrame editCourse = new editCourseFrame();
             editCourse.setVisible(true);
+            editCourseFrame.txtNameCourse.setText(""+coursesTable.getValueAt(coursesTable.getSelectedRow(), 0));
+            editCourseFrame.txtHoursCourse.setText(""+coursesTable.getValueAt(coursesTable.getSelectedRow(), 1));
+            editCourseFrame.txtEnrolledCourse.setText(""+coursesTable.getValueAt(coursesTable.getSelectedRow(), 2));
         } else {
             JOptionPane.showMessageDialog(this, "Please Select one row to be Edited!");
         }
     }//GEN-LAST:event_editCourseActionPerformed
 
+    PreparedStatement pst;
     private void removeStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeStaffActionPerformed
         DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getStaffTable()).getModel(); 
         if(staffTable.getSelectedRow() != -1) {
+            JOptionPane.showConfirmDialog(this, "Are you sure do you want delete this row?");
+            try {
+                pst = databaseConnection.connection().prepareStatement("Delete from staff WHERE ID='" 
+                        + staffTable.getValueAt(staffTable.getSelectedRow(), 1) + "'");
+                pst.executeUpdate();
+            } catch (SQLException ex) {
+                Logger.getLogger(StudentManager.class.getName()).log(Level.SEVERE, null, ex);
+            }
                // remove selected row from the model
                tableModel.removeRow(staffTable.getSelectedRow());
-               JOptionPane.showMessageDialog(null, "Selected row deleted successfully");
+               JOptionPane.showMessageDialog(null, "Selected row is deleted successfully");
         }else {
             JOptionPane.showMessageDialog(null, "Please select one row to be removed!");
         }
@@ -1264,6 +1268,14 @@ public class StudentManager extends javax.swing.JFrame {
     private void removeCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeCourseActionPerformed
         DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getCoursesTable()).getModel(); 
         if(coursesTable.getSelectedRow() != -1) {
+            JOptionPane.showConfirmDialog(this, "Are you sure do you want delete this row?");
+            try {
+                pst = databaseConnection.connection().prepareStatement("Delete from courses WHERE Name='" 
+                        + coursesTable.getValueAt(coursesTable.getSelectedRow(), 0) + "'");
+                pst.executeUpdate();
+            } catch (SQLException ex) {
+                Logger.getLogger(StudentManager.class.getName()).log(Level.SEVERE, null, ex);
+            }
                // remove selected row from the model
                tableModel.removeRow(coursesTable.getSelectedRow());
                JOptionPane.showMessageDialog(null, "Selected row deleted successfully");
@@ -1275,6 +1287,14 @@ public class StudentManager extends javax.swing.JFrame {
     private void removeStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeStudActionPerformed
         DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getStudentsTable()).getModel(); 
         if(studentsTable.getSelectedRow() != -1) {
+            JOptionPane.showConfirmDialog(this, "Are you sure do you want delete this row?");
+            try {
+                pst = databaseConnection.connection().prepareStatement("Delete from students WHERE ID='" 
+                    + studentsTable.getValueAt(studentsTable.getSelectedRow(), 1) + "'");
+                pst.executeUpdate();
+            } catch (SQLException ex) {
+                Logger.getLogger(StudentManager.class.getName()).log(Level.SEVERE, null, ex);
+            }
                // remove selected row from the model
                tableModel.removeRow(studentsTable.getSelectedRow());
                JOptionPane.showMessageDialog(null, "Selected row deleted successfully");
