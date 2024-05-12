@@ -2,7 +2,6 @@
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import javax.swing.table.DefaultTableModel;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -13,14 +12,30 @@ import javax.swing.table.DefaultTableModel;
  * @author sohai
  */
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
+import java.sql.PreparedStatement;
 public class addStudentFrame extends javax.swing.JFrame {
-
+    
+    Connection con;
+    PreparedStatement pst;
+    String url = "jdbc:mysql://localhost:3306/colleague";
+    String username = "root";
+    String password = "!Mm181120022002";
     /**
      * Creates new form addStudentFrame
      */
     public addStudentFrame() {
         initComponents();
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(url,username,password);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(StudentManager.class.getName()).log(Level.SEVERE, null, ex);   
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -180,6 +195,17 @@ public class addStudentFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelActionPerformed
 
     private void btnAddStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddStudentActionPerformed
+
+        try {
+            pst = con.prepareStatement("insert into students(name,id,gpa,level) values(?,?,?,?)");
+            pst.setString(1,txtNameStudent.getText());
+            pst.setString(2,txtIDStudent.getText());
+            pst.setString(3,txtGPAStudent.getText());
+            pst.setString(4,txtLevelStudent.getText());
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(addStudentFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
         if(txtNameStudent.getText().equals("")
                 ||txtIDStudent.getText().equals("")
                 ||txtGPAStudent.getText().equals("")
@@ -196,6 +222,7 @@ public class addStudentFrame extends javax.swing.JFrame {
             //JOptionPane.showMessageDialog(this,"Successfully added data!");
             dispose();  
         }
+
     }//GEN-LAST:event_btnAddStudentActionPerformed
 
     /**

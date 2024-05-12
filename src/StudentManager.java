@@ -8,6 +8,7 @@
  * @author sohai
  */
 import java.sql.*;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
@@ -16,10 +17,14 @@ import java.awt.Color;
 import javax.swing.*;
 import java.awt.Toolkit;
 import java.awt.event.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 public class StudentManager extends javax.swing.JFrame {
-
+//    Connection con;
+//    PreparedStatement pst;
+        
     /**
      * Creates new form StudentManager
      */
@@ -30,8 +35,23 @@ public class StudentManager extends javax.swing.JFrame {
     Color selected = new Color(80,60, 60);
     Color unSelected = new Color(168, 124, 124);
     public StudentManager() {
+        
+//        try {
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            con = DriverManager.getConnection(url,username,password);
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(StudentManager.class.getName()).log(Level.SEVERE, null, ex);   
+//        } catch (SQLException ex) {
+//            Logger.getLogger(StudentManager.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        
         addWindowListener(new WindowAdapter() {
-            public void windowOpened(WindowEvent e) {
+        public void windowOpened(WindowEvent e) {
+                        //studentsTable = new JTable();
+        databaseConnection.connection();
+        tablesConnection.students();
+        tablesConnection.courses();
+        tablesConnection.staff();
                 //Code for changing the Dashboard after adding a new staff
                 txtStudentsDash();
                 //Code for changing the Dashboard after adding a new staff
@@ -112,14 +132,12 @@ public class StudentManager extends javax.swing.JFrame {
         addStud = new javax.swing.JButton();
         removeStud = new javax.swing.JButton();
         editStud = new javax.swing.JButton();
-        clearStud = new javax.swing.JButton();
         Courses = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         coursesTable = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
-        clearCourse = new javax.swing.JButton();
         editCourse = new javax.swing.JButton();
         removeCourse = new javax.swing.JButton();
         addCourse = new javax.swing.JButton();
@@ -143,7 +161,6 @@ public class StudentManager extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         staffTable = new javax.swing.JTable();
         jPanel11 = new javax.swing.JPanel();
-        clearStaff = new javax.swing.JButton();
         editStaff = new javax.swing.JButton();
         removeStaff = new javax.swing.JButton();
         addStaff = new javax.swing.JButton();
@@ -501,7 +518,7 @@ public class StudentManager extends javax.swing.JFrame {
         studentsTable.setForeground(new java.awt.Color(62, 50, 50));
         studentsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"ahmed", "221101", "3.5", "3"}
+
             },
             new String [] {
                 "Name", "ID", "GPA", "Level"
@@ -584,18 +601,6 @@ public class StudentManager extends javax.swing.JFrame {
             }
         });
 
-        clearStud.setBackground(new java.awt.Color(62, 50, 50));
-        clearStud.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
-        clearStud.setForeground(new java.awt.Color(255, 255, 255));
-        clearStud.setText("Clear");
-        clearStud.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        clearStud.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        clearStud.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearStudActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -605,8 +610,7 @@ public class StudentManager extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addStud, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(removeStud, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editStud, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearStud, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(editStud, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -618,9 +622,7 @@ public class StudentManager extends javax.swing.JFrame {
                 .addComponent(removeStud, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(editStud, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(clearStud, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(206, Short.MAX_VALUE))
         );
 
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 470));
@@ -685,18 +687,6 @@ public class StudentManager extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(80, 60, 60));
 
-        clearCourse.setBackground(new java.awt.Color(62, 50, 50));
-        clearCourse.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
-        clearCourse.setForeground(new java.awt.Color(255, 255, 255));
-        clearCourse.setText("Clear");
-        clearCourse.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        clearCourse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        clearCourse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearCourseActionPerformed(evt);
-            }
-        });
-
         editCourse.setBackground(new java.awt.Color(62, 50, 50));
         editCourse.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
         editCourse.setForeground(new java.awt.Color(255, 255, 255));
@@ -742,8 +732,7 @@ public class StudentManager extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(removeCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(editCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -755,9 +744,7 @@ public class StudentManager extends javax.swing.JFrame {
                 .addComponent(removeCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(editCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(clearCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(206, Short.MAX_VALUE))
         );
 
         jPanel5.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 470));
@@ -771,7 +758,6 @@ public class StudentManager extends javax.swing.JFrame {
         jPanel13.setBackground(new java.awt.Color(206, 195, 195));
 
         jLabel1.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Enter the Student's ID:");
 
@@ -780,6 +766,14 @@ public class StudentManager extends javax.swing.JFrame {
         txtIDGrades.setForeground(new java.awt.Color(255, 255, 255));
         txtIDGrades.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtIDGrades.setBorder(null);
+        txtIDGrades.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtIDGradesKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIDGradesKeyTyped(evt);
+            }
+        });
 
         jScrollPane5.setBackground(new java.awt.Color(114, 99, 99));
 
@@ -816,7 +810,6 @@ public class StudentManager extends javax.swing.JFrame {
         gradeTable.setGridColor(new java.awt.Color(255, 255, 255));
         gradeTable.setRowMargin(3);
         gradeTable.setSelectionBackground(new java.awt.Color(223, 204, 204));
-        gradeTable.setSelectionForeground(new java.awt.Color(0, 0, 0));
         gradeTable.setShowGrid(true);
         gradeTable.setShowHorizontalLines(false);
         gradeTable.getTableHeader().setReorderingAllowed(false);
@@ -992,7 +985,7 @@ public class StudentManager extends javax.swing.JFrame {
         staffTable.setForeground(new java.awt.Color(62, 50, 50));
         staffTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Ahmed", "20349234", "011234345"}
+
             },
             new String [] {
                 "Professor's Name", "ID", "Phone Number"
@@ -1013,7 +1006,6 @@ public class StudentManager extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        staffTable.setColumnSelectionAllowed(true);
         staffTable.setFocusable(false);
         staffTable.setRowHeight(24);
         staffTable.setSelectionBackground(new java.awt.Color(70, 60, 60));
@@ -1022,7 +1014,6 @@ public class StudentManager extends javax.swing.JFrame {
         staffTable.setShowHorizontalLines(false);
         staffTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(staffTable);
-        staffTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -1038,18 +1029,6 @@ public class StudentManager extends javax.swing.JFrame {
         jPanel9.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 721, 470));
 
         jPanel11.setBackground(new java.awt.Color(80, 60, 60));
-
-        clearStaff.setBackground(new java.awt.Color(62, 50, 50));
-        clearStaff.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
-        clearStaff.setForeground(new java.awt.Color(255, 255, 255));
-        clearStaff.setText("Clear");
-        clearStaff.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        clearStaff.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        clearStaff.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearStaffActionPerformed(evt);
-            }
-        });
 
         editStaff.setBackground(new java.awt.Color(62, 50, 50));
         editStaff.setFont(new java.awt.Font("Fira Sans Extra Condensed Medium", 0, 18)); // NOI18N
@@ -1096,8 +1075,7 @@ public class StudentManager extends javax.swing.JFrame {
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(removeStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(editStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
@@ -1109,9 +1087,7 @@ public class StudentManager extends javax.swing.JFrame {
                 .addComponent(removeStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(editStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(clearStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(206, Short.MAX_VALUE))
         );
 
         jPanel9.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 470));
@@ -1304,29 +1280,11 @@ public class StudentManager extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_removeStudActionPerformed
 
-    private void clearStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearStudActionPerformed
-        DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getStudentsTable()).getModel(); 
-        tableModel.setRowCount(0);
-        JOptionPane.showMessageDialog(null, "The table has been cleared successfully");
-    }//GEN-LAST:event_clearStudActionPerformed
-
-    private void clearCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearCourseActionPerformed
-        DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getCoursesTable()).getModel();
-        tableModel.setRowCount(0);
-        JOptionPane.showMessageDialog(null, "The table has been cleared successfully");
-    }//GEN-LAST:event_clearCourseActionPerformed
-
     private void clearGradesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearGradesActionPerformed
         DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getGradeTable()).getModel(); 
         tableModel.setRowCount(0);
         JOptionPane.showMessageDialog(null, "The table has been cleared successfully");
     }//GEN-LAST:event_clearGradesActionPerformed
-
-    private void clearStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearStaffActionPerformed
-        DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getStaffTable()).getModel(); 
-        tableModel.setRowCount(0);
-        JOptionPane.showMessageDialog(null, "The table has been cleared successfully");
-    }//GEN-LAST:event_clearStaffActionPerformed
 
     private void btnIDGradesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIDGradesActionPerformed
 
@@ -1350,6 +1308,38 @@ public class StudentManager extends javax.swing.JFrame {
             }
         }            
     }//GEN-LAST:event_btnIDGradesActionPerformed
+
+    private void txtIDGradesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDGradesKeyTyped
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c))
+            evt.consume();
+    }//GEN-LAST:event_txtIDGradesKeyTyped
+
+    private void txtIDGradesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDGradesKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+        {
+                    if(txtIDGrades.getText().isEmpty())
+            JOptionPane.showMessageDialog(null, "Please enter valid ID!");
+        else
+        {
+            boolean found = false;
+            for(int i=0;i<studentsTable.getRowCount();i++)
+            {
+                if(txtIDGrades.getText().equals(studentsTable.getValueAt(i,1)))
+                {
+                    txtGPAGrades.setText(""+String.valueOf(studentsTable.getValueAt(i,2)));
+                    found=true;
+                    break;
+                }    
+            }
+            if(!found)
+            {
+                JOptionPane.showMessageDialog(null, "ID not found!");
+            }
+        }
+        }
+            
+    }//GEN-LAST:event_txtIDGradesKeyPressed
 
     public static javax.swing.JTable getStudentsTable()
     {
@@ -1425,10 +1415,7 @@ public class StudentManager extends javax.swing.JFrame {
     private javax.swing.JLabel c4;
     private javax.swing.JLabel c5;
     private javax.swing.JLabel c6;
-    private javax.swing.JButton clearCourse;
     private javax.swing.JButton clearGrades;
-    private javax.swing.JButton clearStaff;
-    private javax.swing.JButton clearStud;
     private javax.swing.JButton couButton;
     private static javax.swing.JTable coursesTable;
     private javax.swing.JButton dashButton;
