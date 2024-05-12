@@ -19,7 +19,7 @@ public class databaseConnection {
     final static String JDBC_DRIVER="com.mysql.cj.jdbc.Driver";
     final static String url = "jdbc:mysql://localhost:3306/colleague";
     final static String username = "root";
-    final static String password = "!Mm181120022002";
+    final static String password = "123";
      
     databaseConnection()
     {

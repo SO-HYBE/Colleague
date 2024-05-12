@@ -22,7 +22,7 @@ public class addStudentFrame extends javax.swing.JFrame {
     PreparedStatement pst;
     String url = "jdbc:mysql://localhost:3306/colleague";
     String username = "root";
-    String password = "!Mm181120022002";
+    String password = "123";
     /**
      * Creates new form addStudentFrame
      */
