@@ -1287,8 +1287,11 @@ public class StudentManager extends javax.swing.JFrame {
     private void removeStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeStudActionPerformed
         DefaultTableModel tableModel=(DefaultTableModel)(StudentManager.getStudentsTable()).getModel(); 
         if(studentsTable.getSelectedRow() != -1) {
-            JOptionPane.showConfirmDialog(this, "Are you sure do you want delete this row?");
-            try {
+            int confirmation=JOptionPane.showConfirmDialog(this, "Are you sure do you want delete this row?"
+                    ,"Confirmation",JOptionPane.YES_NO_OPTION);
+            if(confirmation==JOptionPane.YES_OPTION)
+            {
+                try {
                 pst = databaseConnection.connection().prepareStatement("Delete from students WHERE ID='" 
                     + studentsTable.getValueAt(studentsTable.getSelectedRow(), 1) + "'");
                 pst.executeUpdate();
@@ -1298,7 +1301,10 @@ public class StudentManager extends javax.swing.JFrame {
                // remove selected row from the model
                tableModel.removeRow(studentsTable.getSelectedRow());
                JOptionPane.showMessageDialog(null, "Selected row deleted successfully");
-        }else {
+            }
+        }
+        else
+        {
             JOptionPane.showMessageDialog(null, "Please select one row to be removed!");
         }
     }//GEN-LAST:event_removeStudActionPerformed
