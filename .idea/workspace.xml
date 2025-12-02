@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af44e88b-2a67-4671-adfd-86324938bdd7" name="Changes" comment="Added AI and Computer Vision codes">
+    <list default="true" id="af44e88b-2a67-4671-adfd-86324938bdd7" name="Changes" comment="AI Assignment Minimax, alpha-beta pruning for Pacman.">
+      <change afterPath="$PROJECT_DIR$/ComputerVision/DownSampling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +37,7 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.ComponentLabeling.executor": "Run",
+    "Python.DownSampling.executor": "Run",
     "Python.FrequencyFilters.executor": "Run",
     "Python.HistEq(Assignment1).executor": "Run",
     "Python.Otsu's(Assignment2).executor": "Run",
@@ -139,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762924968930</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="AI Assignment Minimax, alpha-beta pruning for Pacman.">
+      <option name="closed" value="true" />
+      <created>1764617535380</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1764617535381</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +161,8 @@
     <MESSAGE value="ASsignment 3 comp labeling" />
     <MESSAGE value="changes" />
     <MESSAGE value="Added AI and Computer Vision codes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added AI and Computer Vision codes" />
+    <MESSAGE value="AI Assignment Minimax, alpha-beta pruning for Pacman." />
+    <option name="LAST_COMMIT_MESSAGE" value="AI Assignment Minimax, alpha-beta pruning for Pacman." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Uni_code$HistEq_Assignment1_.coverage" NAME="HistEq(Assignment1) Coverage Results" MODIFIED="1761019575045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ComputerVision" />
