@@ -72,6 +72,55 @@ def tinyMazeSearch(problem):
     w = Directions.WEST
     return  [s, s, w, s, w, w, s, w]
 
+def iterativeDeepeningDepthFirstSearch(problem: SearchProblem, maxDepth=1000):
+    """
+    Iterative Deepening Depth-First Search (IDDFS) for the CS188 Pacman project.
+    Repeatedly performs depth-limited DFS with increasing depth limits until
+    the goal state is found.
+    """
+
+    def depth_limited_dfs(limit):
+        """
+        Perform DFS but do not expand nodes deeper than <limit>.
+        Returns the action path if a goal is found, otherwise None.
+        """
+        stack = util.Stack()
+        # (state, path, depth)
+        stack.push((problem.getStartState(), [], 0))
+
+        # Maintain a visited set per depth iteration (standard IDDFS behavior)
+        visited = set()
+
+        while not stack.isEmpty():
+            state, path, depth = stack.pop()
+
+            if (state, depth) in visited:
+                continue
+            visited.add((state, depth))
+
+            # Goal test
+            if problem.isGoalState(state):
+                return path
+
+            # Do not expand beyond the depth limit
+            if depth == limit:
+                continue
+
+            # Expand successors
+            for successor, action, cost in problem.getSuccessors(state):
+                stack.push((successor, path + [action], depth + 1))
+
+        return None  # No solution within this depth
+
+    # Iterative deepening loop
+    for limit in range(maxDepth + 1):
+        result = depth_limited_dfs(limit)
+        if result is not None:
+            return result
+
+    # If nothing is found (should not happen in valid layouts)
+    return []
+
 def depthFirstSearch(problem: SearchProblem):
     """
     Search the deepest nodes in the search tree first.
@@ -183,3 +232,4 @@ bfs = breadthFirstSearch
 dfs = depthFirstSearch
 astar = aStarSearch
 ucs = uniformCostSearch
+iddfs = iterativeDeepeningDepthFirstSearch

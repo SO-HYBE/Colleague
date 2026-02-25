@@ -75,13 +75,19 @@ class SearchAgent(Agent):
     Note: You should NOT change any code in SearchAgent
     """
 
-    def __init__(self, fn='depthFirstSearch', prob='PositionSearchProblem', heuristic='nullHeuristic'):
+    def __init__(self, fn='depthFirstSearch', prob='PositionSearchProblem', heuristic='nullHeuristic', maxDepth=None):
         # Warning: some advanced Python magic is employed below to find the right functions and problems
 
         # Get the search function from the name and heuristic
         if fn not in dir(search):
             raise AttributeError(fn + ' is not a search function in search.py.')
         func = getattr(search, fn)
+
+        if maxDepth is not None:
+            self.searchFunction = lambda x: func(x, maxDepth=int(maxDepth))
+        else:
+            self.searchFunction = func
+
         if 'heuristic' not in func.__code__.co_varnames:
             print('[SearchAgent] using function ' + fn)
             self.searchFunction = func
