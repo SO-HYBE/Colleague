@@ -1,0 +1,2 @@
+﻿  Assignment.cpp
+C:\Users\HYBE\Desktop\HYBE\Projects\Uni-code\Parallel MPI\Lab2&3Ass\Lab2&3Ass\Assignment.cpp(2,10): error C1083: Cannot open include file: 'mpi.h': No such file or directory

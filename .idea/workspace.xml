@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af44e88b-2a67-4671-adfd-86324938bdd7" name="Changes" comment="Added Machine learning course and 1st assignment done">
-      <change afterPath="$PROJECT_DIR$/Machine Learning/Task L03.ipynb" afterDir="false" />
+    <list default="true" id="af44e88b-2a67-4671-adfd-86324938bdd7" name="Changes" comment="Assignment lab 3 ML">
+      <change afterPath="$PROJECT_DIR$/Machine Learning/Task L05.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +50,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HYBE/Desktop/HYBE/Projects/Uni-code&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HYBE/Desktop/HYBE/Projects/Uni-code/Machine Learning&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -61,6 +61,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HYBE\Desktop\HYBE\Projects\Uni-code\Machine Learning" />
       <recent name="C:\Users\HYBE\Desktop\HYBE\Projects\Uni-code\ComputerVision\Assets" />
     </key>
   </component>
@@ -168,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772037169365</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Assignment lab 3 ML">
+      <option name="closed" value="true" />
+      <created>1773866283163</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1773866283163</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +192,8 @@
     <MESSAGE value="AI Assignment Minimax, alpha-beta pruning for Pacman." />
     <MESSAGE value="added cv project and ai project in the courses folders" />
     <MESSAGE value="Added Machine learning course and 1st assignment done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Machine learning course and 1st assignment done" />
+    <MESSAGE value="Assignment lab 3 ML" />
+    <option name="LAST_COMMIT_MESSAGE" value="Assignment lab 3 ML" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Uni_code$HistEq_Assignment1_.coverage" NAME="HistEq(Assignment1) Coverage Results" MODIFIED="1761019575045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ComputerVision" />
