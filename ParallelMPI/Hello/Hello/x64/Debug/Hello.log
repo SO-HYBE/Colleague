@@ -1,3 +1,8 @@
 ﻿D:\Apps\Visual Studio\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(551,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Hello.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-Ring_Message_Timing.obj : error LNK2005: main already defined in Broadcast_Gather_Timing.obj
+  Lab4_Assignment.cpp
+  Lab5_Assignment.cpp
+C:\Users\HYBE\Desktop\HYBE\Projects\Uni-code\ParallelMPI\Hello\Hello\Lab4_Assignment.cpp(29,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+Lab4_Assignment.obj : error LNK2005: main already defined in Broadcast_Gather_Timing.obj
+Lab5_Assignment.obj : error LNK2005: main already defined in Broadcast_Gather_Timing.obj
 C:\Users\HYBE\Desktop\HYBE\Projects\Uni-code\ParallelMPI\Hello\x64\Debug\Parallel_MPI.exe : fatal error LNK1169: one or more multiply defined symbols found

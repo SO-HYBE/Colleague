@@ -4,7 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af44e88b-2a67-4671-adfd-86324938bdd7" name="Changes" comment="Assignment lab 5 ML (lab 4 didn't have a coding assignment)" />
+    <list default="true" id="af44e88b-2a67-4671-adfd-86324938bdd7" name="Changes" comment="Assignment lab 5 ML (lab 4 didn't have a coding assignment)">
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/FileContentIndex/0c22591d-c525-4e53-8ebf-71959ca8094d.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/FileContentIndex/37d9a774-1a5a-424f-a139-999773983d47.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/FileContentIndex/d9058fd4-9829-4c5c-b5d4-b60df7e31d73.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/FileContentIndex/f81dd0ce-8cca-432a-8c1b-982074d95101.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/v18/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/v18/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/v18/.wsuo" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/v18/.wsuo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/v18/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/v18/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/v18/DocumentLayout.backup.json" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/v18/DocumentLayout.backup.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/v18/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/v18/DocumentLayout.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/v18/ipch/AutoPCH/7d09eb1baafa860b/ESTIMATION_OF_PI.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/v18/ipch/AutoPCH/7d09eb1baafa860b/ESTIMATION_OF_PI.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/v18/ipch/AutoPCH/f0e0d1d44cdfd0ce/BROADCAST_GATHER_TIMING.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/Hello.slnx/v18/ipch/AutoPCH/f0e0d1d44cdfd0ce/BROADCAST_GATHER_TIMING.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/.vs/slnx.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/Hello.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/Hello.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/Hello.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/Hello.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Hello.log" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Hello.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/Cl.items.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/Cl.items.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.9584-cvtres.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.9584-cvtres.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.9584-rc.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.9584-rc.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.9584.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.9584.read.2.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.9584.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.secondary.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.secondary.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/Parallel_MPI.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/vc145.idb" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/vc145.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/vc145.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/Hello/x64/Debug/vc145.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelMPI/Hello/x64/Debug/Parallel_MPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelMPI/Hello/x64/Debug/Parallel_MPI.pdb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
